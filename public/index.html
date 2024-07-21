@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO - BILAL TAOUFIK</title>
+    <link rel="shortcut icon" href="./img/image.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="MyCanvas"></canvas>
+    <header>
+        <div class="menu-container">
+            <button id="menu-toggle" class="menu-toggle">☰</button>
+            <nav id="menu" class="menu">
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#cv">CV</a></li>
+                    <li><a href="#projets">Projets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="accueil">
+        <h1>HEY, WELCOME !</h1>
+        <h3>I love creating beautiful user experience</h3>
+        <img src="./img/image.png" alt="">
+    </section>
+    <section id="cv">
+        <h1>CV</h1>
+        <p>Votre CV ici.</p>
+    </section>
+    <section id="projets">
+        <h1>PORTFOLIO</h1>
+        <div class="projects-container">
+            <div class="project">
+                <img src="image1.jpg" alt="Projet 1">
+                <h2>Projet 1</h2>
+                <p>Description courte du projet 1.</p>
+                <button class="view-button" onclick="viewProject('Projet 1')">Visualiser</button>
+            </div>
+            <div class="project">
+                <img src="image2.jpg" alt="Projet 2">
+                <h2>Projet 2</h2>
+                <p>Description courte du projet 2.</p>
+                <button class="view-button" onclick="viewProject('Projet 2')">Visualiser</button>
+            </div>
+            <div class="project">
+                <img src="./img/icon.png" alt="Projet 3">
+                <h2>Crypto-Shild</h2>
+                <p>Logiciel de cryp/decryptage, projet d'école</p>
+                <button class="download-button" onclick="downloadProject()">Télécharger</button>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h1>Contact</h1>
+        <p>Vos informations de contact ici.</p>
+    </section>
+    <script src="bundle.js"></script>
+</body>
+</html>

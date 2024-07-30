@@ -1,4 +1,3 @@
-// Gestion du menu hamburger
 function init() {
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
@@ -22,13 +21,11 @@ function viewProject(projectName) {
 }
 
 function downloadProject() {
-    const downloadLink = './Crypto-Shild.exe';
+    const downloadLink = './externe/Crypto-Shild.exe';
     window.location.href = downloadLink;
 }
 
-// Attendez que le document soit entièrement chargé avant d'initialiser
 document.addEventListener('DOMContentLoaded', init);
 
-// Attachez les fonctions au window pour garantir leur disponibilité globale
 window.viewProject = viewProject;
 window.downloadProject = downloadProject;

@@ -8,56 +8,81 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas id="MyCanvas"></canvas>
-    <header>
-        <div class="menu-container">
-            <button id="menu-toggle" class="menu-toggle">☰</button>
-            <nav id="menu" class="menu">
-                <ul>
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#cv">CV</a></li>
-                    <li><a href="#projets">Projets</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <section id="accueil">
-        <h1>HEY, WELCOME !</h1>
-        <h3>I love creating beautiful user experience</h3>
-        <img src="./img/image.png" alt="">
-    </section>
-    <section id="cv">
-        <h1>CV</h1>
-        <p>Votre CV ici.</p>
-    </section>
-    <section id="projets">
-        <h1>PORTFOLIO</h1>
-        <div class="projects-container">
-            <div class="project">
-                <img src="image1.jpg" alt="Projet 1">
-                <h2>Projet 1</h2>
-                <p>Description courte du projet 1.</p>
-                <button class="view-button" onclick="viewProject('Projet 1')">Visualiser</button>
+    <div class="container">
+        <canvas id="MyCanvas"></canvas>
+        <header>
+            <div class="menu-container">
+                <button id="menu-toggle" class="menu-toggle">☰</button>
+                <nav id="menu" class="menu">
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#cv">CV</a></li>
+                        <li><a href="#projets">Projets</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-            <div class="project">
-                <img src="image2.jpg" alt="Projet 2">
-                <h2>Projet 2</h2>
-                <p>Description courte du projet 2.</p>
-                <button class="view-button" onclick="viewProject('Projet 2')">Visualiser</button>
+        </header>
+        <section id="accueil">
+            <h1>BILAL</h1>
+            <h3>Hi, I'm</h3>
+            <img id="accueil-img" src="./img/image.png" alt="">
+            <img id="icon-scroll" src="./img/icon-scroll.png" alt="">
+        </section>
+        <section id="cv">
+            <h1>PROFIL</h1>
+            <p>Votre CV ici.</p>
+        </section>
+        <section id="projets">
+            <h1>PORTFOLIO</h1>
+            <div class="projects-container">
+                <div class="project1">
+                    <i>2024</i>
+                    <h2>UVITEC</h2>
+                    <h3>Professional Project</h3>
+                    <img src="./img/logo-uvitec.png" alt="Projet 3">
+                    <p>3D visualization + Animation</p>
+                    <button class="view-button" onclick="viewProject('Projet 1')">VIEW</button>
+                </div>
+                <div class="project2">
+                    <i>2024</i>
+                    <h2>VILBER</h2>
+                    <h3>Professional Project</h3>
+                    <img src="./img/logo-vilber.png" alt="Projet 3">
+                    <p>3D visualization + Animation</p>
+                    <button class="view-button" onclick="viewProject('Projet 2')">VIEW</button>
+                </div>
+                <div class="project3">
+                    <i>2024</i>
+                    <h2>CRYPTO-SHILD</h2>
+                    <h3>School Project Collab</h3>
+                    <img src="./img/icon-logiciel.png" alt="Projet 3">
+                    <p>File encryption/decryption software</p>
+                    <button class="download-button" onclick="downloadProject()">DOWNLOAD</button>
+                </div>
             </div>
-            <div class="project">
-                <img src="./img/icon.png" alt="Projet 3">
-                <h2>Crypto-Shild</h2>
-                <p>Logiciel de cryp/decryptage, projet d'école</p>
-                <button class="download-button" onclick="downloadProject()">Télécharger</button>
-            </div>
-        </div>
-    </section>
-    <section id="contact">
-        <h1>Contact</h1>
-        <p>Vos informations de contact ici.</p>
-    </section>
+        </section>
+        <section id="contact">
+            <h1>CONTACT</h1>
+            <form id="contact-form" action="send_email.php" method="post">
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Envoyer</button>
+            </form>
+            <footer>
+                <p>© Bilal TAOUFIK | <a href="">Legal Notice</a> | <a href="">Privacy Policy</a></p>
+            </footer>
+        </section>
+        
+    </div>
     <script src="bundle.js"></script>
+
 </body>
 </html>

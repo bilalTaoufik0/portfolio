@@ -23,16 +23,63 @@
                 </nav>
             </div>
         </header>
+
         <section id="accueil">
             <h1>BILAL</h1>
             <h3>Hi, I'm</h3>
             <img id="accueil-img" src="./img/image.png" alt="">
             <img id="icon-scroll" src="./img/icon-scroll.png" alt="">
         </section>
+
         <section id="cv">
             <h1>PROFIL</h1>
-            <p>Votre CV ici.</p>
+                <div class="profile-header">
+                    <img src="./img/image2.png" alt="Profile Picture">
+                </div>
+                <div class="profile-info">
+                    <p>Name : <span>Bilal</span></p>
+                    <p>Age : <span>19</span></p>
+                    <p>From : <span>France</span></p>
+                </div>
+                <div class="skills">
+                    <h2>Skills :</h2>
+                    <div class="skill">
+                        <span>HTML/CSS</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>JavaScript</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>C++</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 25%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Python</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 25%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>3D Modelling</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 10%;"></div>
+                        </div>
+                    </div>
+                </div>
+            <div class="download-cv">
+                <a href="./externe/cv.pdf" download>Télécharger mon CV</a>
+                <img src="./img/icon-download.png" alt="">
+            </div>
         </section>
+
         <section id="projets">
             <h1>PORTFOLIO</h1>
             <div class="projects-container">
@@ -64,7 +111,7 @@
         </section>
         <section id="contact">
             <h1>CONTACT</h1>
-            <form id="contact-form" action="send_email.php" method="post">
+            <form id="contact-form" action="./send_email.php" method="post">
                 <label for="name">Nom:</label>
                 <input type="text" id="name" name="name" required>
                 
@@ -76,6 +123,8 @@
                 
                 <button type="submit">Envoyer</button>
             </form>
+
+            
             <footer>
                 <p>© Bilal TAOUFIK | <a href="">Legal Notice</a> | <a href="">Privacy Policy</a></p>
             </footer>

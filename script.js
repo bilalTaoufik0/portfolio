@@ -1,3 +1,4 @@
+// Initialisation du menu toggle
 function init() {
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
@@ -15,6 +16,7 @@ function init() {
     }
 }
 
+// Gestionnaire de soumission du formulaire
 function handleSubmit(event) {
     event.preventDefault(); // Empêche le comportement par défaut du formulaire
 
@@ -24,7 +26,8 @@ function handleSubmit(event) {
         data[key] = value;
     });
 
-    fetch('/send_email', {
+    // Utilisation de la bonne URL pour appeler la fonction Netlify
+    fetch('/.netlify/functions/send-email', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

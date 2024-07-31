@@ -1,37 +1,18 @@
 const path = require('path');
-const webpack = require('webpack');
 
 module.exports = {
-    entry: './script.js',
+    entry: './script.js', // Point d'entrée de votre code JavaScript
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'public'),
+        filename: 'bundle.js', // Nom du fichier bundle généré
+        path: path.resolve(__dirname, 'public') // Répertoire de sortie
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env'],
-                    },
-                },
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'], // Charge les fichiers CSS
             },
         ],
     },
-    resolve: {
-        extensions: ['.js'],
-    },
-    mode: 'development',
-    plugins: [
-        new webpack.ContextReplacementPlugin(
-            /three[\\/]examples[\\/]jsm[\\/]physics/,
-            path.resolve(__dirname, 'src') // Ajustez le chemin si nécessaire
-        ),
-    ],
-    stats: {
-        errorDetails: true
-    }
+    mode: 'development', // Mode de développement
 };

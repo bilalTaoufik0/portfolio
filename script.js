@@ -16,7 +16,6 @@ function init() {
     }
 }
 
-// Gestionnaire de soumission du formulaire
 function handleSubmit(event) {
     event.preventDefault(); // Empêche le comportement par défaut du formulaire
 
@@ -26,15 +25,14 @@ function handleSubmit(event) {
         data[key] = value;
     });
 
-    // Utilisation de la bonne URL pour appeler la fonction Netlify
-    fetch('/.netlify/functions/send-email', {
+    fetch('/api/send-email', { // Assurez-vous que le chemin est correct
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
     })
-    .then(response => response.text())
+    .then(response => response.json())
     .then(result => {
         alert('Bien Reçus !');
     })
@@ -43,6 +41,7 @@ function handleSubmit(event) {
         alert('Erreur lors de l\'envoi du message.');
     });
 }
+
 
 // Initialisation du script lorsque le DOM est complètement chargé
 document.addEventListener('DOMContentLoaded', () => {

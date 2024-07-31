@@ -27,7 +27,7 @@ function handleSubmit(event) {
     });
 
     // Utilisation de la bonne URL pour appeler la fonction Netlify
-    fetch('/.netlify/functions/send-email', {
+    fetch('./netlify/functions/send-emails.js', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

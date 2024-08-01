@@ -606,40 +606,93 @@ section {
 
 /* Style du formulaire de contact */
 #contact-form {
-    background-color: rgba(0, 0, 0, 0.7); /* Fond noir avec transparence */
-    color: orange; /* Texte orange */
-    padding: 20px;
+    background-color: rgb(0 0 0 / 32%);
+    color: white;
+    padding: 53px 77px 81px;
     border-radius: 8px;
-    max-width: 600px;
     margin: 0 auto;
+    width: 50%;
+    margin-left: 3%;
+    margin-top: 2%;
+    height: 65%;
 }
 
 #contact-form label {
     display: block;
     margin-bottom: 8px;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 3px;
+
 }
 
 #contact-form input, #contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid orange;
-    border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.2); /* Fond légèrement transparent */
-    color: orange;
+    width: 79%;
+    padding: 11px;
+    margin-bottom: 25px;
+    border: 3px solid #ffbb3f;
+    border-radius: 16px;
+    background-color: rgb(255 255 255 / 43%);
+    color: white;
+    font-size: 15px;
 }
 
 #contact-form button {
-    background-color: orange;
+    background-color: #ffc77c;
     color: black;
     border: none;
     padding: 10px 20px;
-    border-radius: 4px;
+    border-radius: 20px;
     cursor: pointer;
+    font-family: 'Montserrat';
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 40%;
 }
 
+
 #contact-form button:hover {
-    background-color: darkorange;
+    background-color: #ffddbd;
+}
+
+
+
+.social-buttons {
+    margin-right: 35%;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    margin-bottom: 60px;
+    opacity: 45%;
+}
+
+.social-button img {
+    width: 50px;
+    height: auto;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    left: 50px;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    white-space: nowrap;
+    z-index: 1000;
+    opacity: none;
+}
+
+.social-button:hover .tooltip {
+    display: block;
 }
 
 

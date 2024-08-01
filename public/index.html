@@ -33,47 +33,47 @@
 
         <section id="cv">
             <h1>PROFIL</h1>
-                <div class="profile-header">
-                    <img src="./img/image2.png" alt="Profile Picture">
-                </div>
-                <div class="profile-info">
-                    <p>Name : <span>Bilal</span></p>
-                    <p>Age : <span>19</span></p>
-                    <p>From : <span>France</span></p>
-                </div>
-                <div class="skills">
-                    <h2>Skills :</h2>
-                    <div class="skill">
-                        <span>HTML/CSS</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 50%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>JavaScript</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 50%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>C++</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 25%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Python</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 25%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>3D Modelling</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 10%;"></div>
-                        </div>
+            <div class="profile-header">
+                <img src="./img/image2.png" alt="Profile Picture">
+            </div>
+            <div class="profile-info">
+                <p>Name : <span>Bilal</span></p>
+                <p>Age : <span>19</span></p>
+                <p>From : <span>France</span></p>
+            </div>
+            <div class="skills">
+                <h2>Skills :</h2>
+                <div class="skill">
+                    <span>HTML/CSS</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 50%;"></div>
                     </div>
                 </div>
+                <div class="skill">
+                    <span>JavaScript</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 50%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span>C++</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 25%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span>Python</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 25%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span>3D Modelling</span>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 10%;"></div>
+                    </div>
+                </div>
+            </div>
             <div class="download-cv">
                 <a href="./externe/cv.pdf" download>Télécharger mon CV</a>
                 <img src="./img/icon-download.png" alt="">
@@ -87,17 +87,17 @@
                     <i>2024</i>
                     <h2>UVITEC</h2>
                     <h3>Professional Project</h3>
-                    <img src="./img/logo-uvitec.png" alt="Projet 3">
+                    <img src="./img/logo-uvitec.png" alt="Projet 1">
                     <p>3D visualization + Animation</p>
-                    <button class="view-button" onclick="viewProject('Projet 1')">VIEW</button>
+                    <button class="view-button" data-project="Projet 1">VIEW</button>
                 </div>
                 <div class="project2">
                     <i>2024</i>
                     <h2>VILBER</h2>
                     <h3>Professional Project</h3>
-                    <img src="./img/logo-vilber.png" alt="Projet 3">
+                    <img src="./img/logo-vilber.png" alt="Projet 2">
                     <p>3D visualization + Animation</p>
-                    <button class="view-button" onclick="viewProject('Projet 2')">VIEW</button>
+                    <button class="view-button" data-project="Projet 2">VIEW</button>
                 </div>
                 <div class="project3">
                     <i>2024</i>
@@ -105,13 +105,14 @@
                     <h3>School Project Collab</h3>
                     <img src="./img/icon-logiciel.png" alt="Projet 3">
                     <p>File encryption/decryption software</p>
-                    <button class="download-button" onclick="downloadProject()">DOWNLOAD</button>
+                    <button class="download-button" data-project="Projet 3">DOWNLOAD</button>
                 </div>
             </div>
         </section>
+    
         <section id="contact">
             <h1>CONTACT</h1>
-            <form id="contact-form" method="POST" action="/.netlify/functions/send-email">
+            <form id="contact-form">
                 <label for="name">Nom:</label>
                 <input type="text" id="name" name="name" required>
                 
@@ -119,19 +120,49 @@
                 <input type="email" id="email" name="email" required>
                 
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+                <textarea id="message" name="message" rows="4" required="" style="width: 918px; height: 379px;"></textarea>
                 
-                <button type="submit">Envoyer</button>
+                <button type="submit">SUBMIT</button>
             </form>
-
+                
+            <div class="social-buttons">
+                <a href="https://www.linkedin.com/in/bilal-taoufik-642597275/" class="social-button" target="_blank" title="LinkedIn">
+                    <img src="./img/icon-linkedin.png" alt="LinkedIn">
+                    <span class="tooltip">LinkedIn</span>
+                </a>
+                <a href="https://github.com/bilalTaoufik0" class="social-button" target="_blank" title="GitHub">
+                    <img src="./img/github-icon-2.png" alt="GitHub">
+                    <span class="tooltip">GitHub</span>
+                </a>
+                <a href="mailto:bll.taoufik@gmail.com" class="social-button" title="Mail">
+                    <img src="./img/icon-mail.png" alt="Mail">
+                    <span class="tooltip">Mail</span>
+                </a>
+            </div>
+            
 
             <footer>
                 <p>© Bilal TAOUFIK | <a href="">Legal Notice</a> | <a href="">Privacy Policy</a></p>
             </footer>
         </section>
-        
     </div>
-    <script src="bundle.js"></script>
+    
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        emailjs.init("KSloQ27lejVrtcrQF");
 
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            emailjs.sendForm('service_32dvr9u', 'template_oxt08wt', this)
+                .then(function(response) {
+                    alert('Message envoyé avec succès!');
+                }, function(error) {
+                    alert('Erreur lors de l\'envoi du message');
+                    console.error('Erreur:', error);
+                });
+        });
+    </script>
+    <script src="bundle.js"></script>
 </body>
 </html>

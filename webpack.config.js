@@ -1,18 +1,27 @@
 const path = require('path');
 
 module.exports = {
-    entry: './script.js', // Point d'entrée de votre code JavaScript
+    entry: './script.js',
     output: {
-        filename: 'bundle.js', // Nom du fichier bundle généré
-        path: path.resolve(__dirname, 'public') // Répertoire de sortie
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'public')
+    },
+    devServer: {
+        contentBase: path.join(__dirname, 'public'),
+        compress: true,
+        port: 9000
     },
     module: {
         rules: [
             {
-                test: /\.css$/i,
-                use: ['style-loader', 'css-loader'], // Charge les fichiers CSS
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
             },
-        ],
-    },
-    mode: 'development', // Mode de développement
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: ['babel-loader']
+            }
+        ]
+    }
 };

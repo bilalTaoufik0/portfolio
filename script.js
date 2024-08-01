@@ -1,55 +1,62 @@
-// Initialisation du menu toggle
-function init() {
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+    
+    const toggleMenu = () => {
+        const isMenuOpen = menu.style.left === '0px';
+        menu.style.left = isMenuOpen ? '-250px' : '0px';
+    };
 
-    if (menuToggle && menu) {
-        menuToggle.addEventListener('click', function() {
+    menuToggle.addEventListener('click', toggleMenu);
+
+    document.addEventListener('click', (event) => {
+        if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
             if (menu.style.left === '0px') {
                 menu.style.left = '-250px';
-            } else {
-                menu.style.left = '0px';
             }
-        });
-    } else {
-        console.error('Menu toggle or menu element not found');
+        }
+    });
+});
+
+
+function viewProject(projectName) {
+    let url = '';
+    switch(projectName) {
+        case 'Projet 1':
+            url = 'https://example.com/project1';
+            break;
+        case 'Projet 2':
+            url = 'https://www.vilber.com/test-bilal-insertion3d-fullscreen/';
+            break;
+        default:
+            console.error('Unknown project:', projectName);
+            return;
     }
+    window.open(url, '_blank');
 }
 
-function handleSubmit(event) {
-    event.preventDefault(); // Empêche le comportement par défaut du formulaire
-
-    const formData = new FormData(document.getElementById('contact-form'));
-    const data = {};
-    formData.forEach((value, key) => {
-        data[key] = value;
-    });
-
-    fetch('/api/send-email', { // Assurez-vous que le chemin est correct
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(result => {
-        alert('Bien Reçus !');
-    })
-    .catch(error => {
-        console.error('Erreur:', error);
-        alert('Erreur lors de l\'envoi du message.');
-    });
+function downloadProject(projectName) {
+    let url = '';
+    switch(projectName) {
+        case 'Projet 3':
+            url = './externe/Crypto-Shild.exe';
+            break;
+        default:
+            console.error('Unknown project:', projectName);
+            return;
+    }
+    window.location.href = url;
 }
 
 
-// Initialisation du script lorsque le DOM est complètement chargé
-document.addEventListener('DOMContentLoaded', () => {
-    init();
-    const form = document.getElementById('contact-form');
-    if (form) {
-        form.addEventListener('submit', handleSubmit);
-    } else {
-        console.error('Form element not found');
-    }
+document.querySelectorAll('.view-button').forEach(button => {
+    button.addEventListener('click', () => {
+        viewProject(button.getAttribute('data-project'));
+    });
+});
+
+document.querySelectorAll('.download-button').forEach(button => {
+    button.addEventListener('click', () => {
+        downloadProject(button.getAttribute('data-project'));
+    });
 });

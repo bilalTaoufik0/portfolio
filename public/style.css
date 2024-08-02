@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-html, body {
+/* Réinitialisation globale */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles globaux */
+html, body {
     height: 100%;
     overflow: hidden; 
 }
@@ -19,28 +25,13 @@ html, body {
     display: none;
 }
 
-body {
-    margin: 0; 
-    padding: 0; 
-}
-
-
-#MyCanvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-}
-
-
 header {
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1100;
+    height: auto;
 }
 
 .menu-container {
@@ -110,38 +101,41 @@ section {
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    color: #16172cc0; 
+    position: relative; /* Positionne les éléments enfants correctement */
     padding: 20px;
 }
 
 #accueil {
-    position: relative;
     height: 100vh;
+    width: 100%;
     background-image: url("./img/fond.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.text-container {
+    position: absolute;
+    left: 165px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 #accueil h1 {
     font-size: 275px;
-    position: absolute;
-    top: 10%;
-    left: 9%;
     color: white;
     font-family: 'Montserrat';
     letter-spacing: 5px;
-    z-index: 1000;
+    margin: 0;
 }
 
 #accueil h3 {
     font-size: 45px;
-    position: absolute;
-    top: 29.3%;
-    left: 10%;
     color: #000000;
     font-family: 'Montserrat';
     letter-spacing: 3px;
     font-weight: 400;
-    width: 30%;
-    z-index: 1000;
+    margin-bottom: -72px;
+    margin-left: 20px;
 }
 
 #accueil-img {
@@ -153,24 +147,21 @@ section {
     z-index: 100;
 }
 
-
 #icon-scroll {
-    width: 30%;
+    width: 2%;
     height: auto;
     position: absolute;
-    right: 34%;
-    bottom: -13%;
+    right: 47%;
+    bottom: 2%;
     z-index: 100;
 }
-
-
-
 
 
 #cv {
     position: relative;
     height: 100vh;
     background-image: url("./img/fond2.png");
+    z-index: 110;
 }
 
 #cv h1 {
@@ -236,7 +227,6 @@ section {
 }
 
 .skills {
-    display: block;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
@@ -244,7 +234,7 @@ section {
     border-radius: 10px;
     padding: 1%;
     width: 75%;
-    height: 36%;
+    height: 42%;
     margin-left: -70%;
     margin-top: 20%;
 
@@ -318,6 +308,676 @@ section {
     color: #3C1E0D;
 }
 
+/* Media Query pour les écrans jusqu'à 1300px */
+@media (max-width: 4000px) {
+
+    .skills {
+        position: absolute;
+        width: 76%;
+        height: 45%;
+        margin-bottom: 24px;
+        margin-left: 1%;
+        margin-top: 10%;
+        padding: 10px;
+    }
+
+    .profile-header {
+        height: 39%;
+        margin-left: 1%;
+        margin-top: -13%;
+        margin-right: -36px;
+    }
+
+    .profile-info span {
+        font-size: 34px;
+    }
+
+    .profile-info {
+        width: 45%;
+        height: 15%;
+        margin-left: 10%;
+        margin-top: -13%;
+    }
+
+    .profile-info p {
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+    }
+
+    .download-cv {
+        width: 69%;
+        height: 4%;
+        right: 17%;
+        bottom: 10px;
+        font-size: 12px;
+    }
+}
+
+
+/* Media Query pour les écrans jusqu'à 1300px */
+@media (max-width: 3000px) {
+
+    .skills {
+        position: absolute;
+        width: 80%;
+        height: 52%;
+        margin-bottom: 24px;
+        margin-left: 1%;
+        margin-top: 14%;
+        padding: 10px;
+    }
+
+    .profile-header {
+        height: 21%;
+        margin-left: 1%;
+        margin-top: -23%;
+        margin-right: -36px;
+    }
+
+    .profile-info span {
+        font-size: 34px;
+    }
+
+    .profile-info {
+        width: 45%;
+        height: 15%;
+        margin-left: 10%;
+        margin-top: -23%;
+    }
+
+    .profile-info p {
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+    }
+
+    .download-cv {
+        width: 69%;
+        height: 4%;
+        right: 17%;
+        bottom: 10px;
+        font-size: 12px;
+    }
+}
+
+
+/* Media Query pour les écrans jusqu'à 1300px */
+@media (max-width: 2500px) {
+
+    .skills {
+        position: absolute;
+        width: 80%;
+        height: 52%;
+        margin-bottom: 24px;
+        margin-left: 1%;
+        margin-top: 14%;
+        padding: 10px;
+    }
+
+    .profile-header {
+        height: 21%;
+        margin-left: 1%;
+        margin-top: -31%;
+        margin-right: -36px;
+    }
+
+    .profile-info span {
+        font-size: 34px;
+    }
+
+    .profile-info {
+        width: 45%;
+        height: 15%;
+        margin-left: 10%;
+        margin-top: -31%;
+    }
+
+    .profile-info p {
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+    }
+
+    .download-cv {
+        width: 69%;
+        height: 4%;
+        right: 17%;
+        bottom: 10px;
+        font-size: 12px;
+    }
+}
+
+
+/* Media Query pour les écrans jusqu'à 1300px */
+@media (max-width: 1750px) {
+
+    .skills {
+        position: absolute;
+        width: 80%;
+        height: 52%;
+        margin-bottom: 24px;
+        margin-left: 1%;
+        margin-top: 14%;
+        padding: 10px;
+    }
+
+    .profile-header {
+        height: 21%;
+        margin-left: 1%;
+        margin-top: -31%;
+        margin-right: -36px;
+    }
+
+    .profile-info span {
+        font-size: 34px;
+    }
+
+    .profile-info {
+        width: 45%;
+        height: 15%;
+        margin-left: 10%;
+        margin-top: -31%;
+    }
+
+    .profile-info p {
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+    }
+
+    .download-cv {
+        width: 69%;
+        height: 4%;
+        right: 17%;
+        bottom: 10px;
+        font-size: 12px;
+    }
+}
+
+
+
+
+/* Media Query pour les écrans jusqu'à 1300px */
+@media (max-width: 1300px) {
+    .text-container {
+        left: 40px;
+    }
+
+    #accueil-img {
+        width: 50%;
+    }
+
+    #icon-scroll {
+        width: 5%;
+    }
+
+    .skills {
+        position: absolute;
+        width: 80%;
+        height: 52%;
+        margin-bottom: 24px;
+        margin-left: 1%;
+        margin-top: 21%;
+        padding: 10px;
+    }
+
+    .profile-header {
+        height: 16%;
+        margin-left: 1%;
+        margin-top: -33%;
+        margin-right: -36px;
+    }
+
+    .profile-info span {
+        font-size: 34px;
+    }
+
+    .profile-info {
+        width: 45%;
+        height: 15%;
+        margin-left: 16%;
+        margin-top: -33%;
+    }
+
+    .profile-info p {
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+    }
+
+    .download-cv {
+        width: 69%;
+        height: 4%;
+        right: 17%;
+        bottom: 10px;
+        font-size: 12px;
+    }
+}
+
+
+
+/* Media Query pour les écrans jusqu'à 1024px */
+@media (max-width: 1024px) {
+    .skills {
+        position: absolute;
+        width: 80%;
+        height: 62%;
+        margin-bottom: 24px;
+        margin-left: 2%;
+        margin-top: 32%;
+        padding: 10px;
+    }
+
+    .profile-header {
+        height: 10%;
+        margin-left: 1%;
+        margin-top: -79%;
+        margin-right: -36px;
+    }
+
+    .profile-info span {
+        font-size: 34px;
+    }
+
+    .profile-info {
+        width: 70%;
+        height: 10%;
+        margin-left: 15%;
+        margin-top: -79%;
+    }
+
+    .profile-info p {
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+    }
+
+    .download-cv {
+        width: 69%;
+        height: 4%;
+        right: 17%;
+        bottom: 10px;
+        font-size: 12px;
+    }
+}
+
+
+
+
+/* Media Query pour les écrans jusqu'à 940px */
+@media (max-width: 940px) {
+    .text-container {
+        left: 35px;
+    }
+
+    #accueil h1 {
+        font-size: 150px; 
+    }
+
+    #accueil h3 {
+        font-size: 30px;
+        margin-bottom: -38px;
+        margin-left: 11px;
+    }
+
+    #accueil-img {
+        width: 50%;
+    }
+
+    #icon-scroll {
+        width: 5%;
+    }
+
+    .skills {
+        position: absolute;
+        width: 80%;
+        height: 62%;
+        margin-bottom: 24px;
+        margin-left: 2%;
+        margin-top: 32%;
+        padding: 10px;
+    }
+
+    .profile-header {
+        height: 10%;
+        margin-left: 1%;
+        margin-top: -79%;
+        margin-right: -36px;
+    }
+
+    .profile-info span {
+        font-size: 34px;
+    }
+
+    .profile-info {
+        width: 70%;
+        height: 10%;
+        margin-left: 15%;
+        margin-top: -79%;
+    }
+
+    .profile-info p {
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+    }
+
+    .download-cv {
+        width: 69%;
+        height: 4%;
+        right: 17%;
+        bottom: 10px;
+        font-size: 12px;
+    }
+}
+
+
+
+/* Media Query pour les écrans jusqu'à 860px */
+@media (max-width: 860px) {
+    #accueil h1 {
+        font-size: 150px;
+    }
+
+    #accueil h3 {
+        font-size: 30px;
+    }
+
+    #accueil-img {
+        width: 37%;
+    }
+
+    #icon-scroll {
+        width: 5%;
+    }
+}
+
+/* Media Query pour les écrans jusqu'à 750px */
+@media (max-width: 700px) {
+    #accueil h1 {
+        font-size: 150px;
+    }
+
+    #accueil h3 {
+        font-size: 30px;
+    }
+
+    #accueil-img {
+        width: 30%;
+    }
+
+    #icon-scroll {
+        width: 5%;
+    }
+
+    .skills {
+        position: absolute;
+        width: 80%;
+        height: 62%;
+        margin-bottom: 24px;
+        margin-left: 2%;
+        margin-top: 44%;
+        padding: 10px;
+    }
+
+    .profile-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        background-color: #00000049;
+        border-radius: 10px;
+        padding: 1%;
+        width: 19%;
+        height: 10%;
+        margin-left: 1%;
+        margin-top: -105%;
+        margin-right: -36px;
+    }
+
+    .profile-info span {
+        font-size: 20px;
+    }
+
+    .profile-info {
+        width: 70%;
+        height: 10%;
+        margin-left: 14%;
+        margin-top: -105%;
+    }
+
+    .profile-info p {
+        font-size: 9px;
+        font-weight: 300;
+        margin-left: 12px;
+    }
+
+    .download-cv {
+        width: 69%;
+        height: 4%;
+        right: 17%;
+        bottom: 10px;
+        font-size: 12px;
+    }
+}
+
+
+
+/* Media Query pour les écrans jusqu'à 450px */
+@media (max-width: 450px) {
+    .text-container {
+        left: 30px;
+    }
+
+    #accueil h1 {
+        font-size: 110px;
+    }
+
+    #accueil h3 {
+        font-size: 15px;
+        margin-bottom: -25px;
+    }
+
+    #accueil-img {
+        width: 90%;
+        transform: rotate(-25deg);
+        left: 25%;
+        top: 66%;
+    }
+
+    #icon-scroll {
+        width: 5%;
+        left: 20%;
+    }
+
+    .skills {
+        position: absolute;
+        width: 80%;
+        height: 62%;
+        margin-bottom: 24px;
+        margin-left: 2%;
+        margin-top: 44%;
+        padding: 10px;
+    }
+
+    .profile-header {
+        margin-left: 1%;
+        margin-top: -145%;
+        margin-right: -36px;
+    }
+
+    .profile-info span {
+        font-size: 20px;
+    }
+
+    .profile-info {
+        width: 70%;
+        height: 10%;
+        margin-left: 14%;
+        margin-top: -145%;
+    }
+
+    .profile-info p {
+        font-size: 9px;
+        font-weight: 300;
+        margin-left: 12px;
+    }
+
+    .download-cv {
+        width: 69%;
+        height: 4%;
+        right: 17%;
+        bottom: 10px;
+        font-size: 12px;
+    }
+}
+
+
+
+
+/* Media Query pour les écrans jusqu'à 390px */
+@media (max-width: 390px) {
+    .text-container {
+        left: 15px;
+    }
+
+    #accueil h1 {
+        font-size: 100px;
+    }
+
+    #accueil h3 {
+        font-size: 10px;
+        margin-bottom: -25px;
+    }
+
+    #accueil-img {
+        width: 100%;
+        transform: rotate(-25deg);
+        left: 19%;
+        top: 62%;
+    }
+
+    #icon-scroll {
+        width: 5%;
+        left: 20%;
+    }
+
+    .skills {
+        position: absolute;
+        width: 80%;
+        height: 62%;
+        margin-bottom: 24px;
+        margin-left: 2%;
+        margin-top: 44%;
+        padding: 10px;
+    }
+
+    .profile-header {
+        margin-top: -155%;
+        margin-right: -36px;
+    }
+
+    .profile-info span {
+        font-size: 20px;
+    }
+
+    .profile-info {
+        width: 70%;
+        height: 10%;
+        margin-left: 14%;
+        margin-top: -155%;
+    }
+
+    .profile-info p {
+        font-size: 9px;
+        font-weight: 300;
+        margin-left: 12px;
+    }
+
+    .download-cv {
+        width: 69%;
+        height: 4%;
+        right: 17%;
+        bottom: 10px;
+        font-size: 12px;
+    }
+}
+
+
+
+/* Media Query pour les écrans jusqu'à 375px */
+@media (max-width: 375px) {
+    .text-container {
+        left: 15px;
+    }
+
+    #accueil h1 {
+        font-size: 100px;
+    }
+
+    #accueil h3 {
+        font-size: 10px;
+        margin-bottom: -25px;
+    }
+
+    #accueil-img {
+        width: 83%;
+        transform: rotate(-25deg);
+        left: 27%;
+        top: 62%;
+    }
+
+    #icon-scroll {
+        width: 5%;
+        left: 20%;
+    }
+
+
+    .skills {
+        position: absolute;
+        width: 80%;
+        height: 62%;
+        margin-bottom: 24px;
+        margin-left: 2%;
+        margin-top: 44%;
+        padding: 10px;
+    }
+
+    .profile-header {
+        padding: 1%;
+        width: 19%;
+        height: 10%;
+        margin-left: 1%;
+        margin-top: -105%;
+        margin-right: -36px;
+    }
+
+    .profile-info span {
+        font-size: 20px;
+    }
+
+    .profile-info {
+        width: 70%;
+        height: 10%;
+        margin-left: 14%;
+        margin-top: -105%;
+    }
+
+    .profile-info p {
+        font-size: 9px;
+        font-weight: 300;
+        margin-left: 12px;
+    }
+
+    .download-cv {
+        width: 69%;
+        height: 4%;
+        right: 17%;
+        bottom: 10px;
+        font-size: 12px;
+    }
+}
 
 
 
@@ -331,6 +991,9 @@ section {
 
 
 
+
+
+/*
 
 #projets {
     position: relative;
@@ -604,7 +1267,8 @@ section {
     z-index: 1000;
 }
 
-/* Style du formulaire de contact */
+
+
 #contact-form {
     background-color: rgb(0 0 0 / 32%);
     color: white;
@@ -701,7 +1365,7 @@ section {
 
 
 
-/* Style pour le footer */
+
 footer {
     background-color: rgba(0, 0, 0, 0.452);
     color: orange;
@@ -726,3 +1390,5 @@ footer a:hover {
     font-family: 'Montserrat';
 
 }
+
+*/

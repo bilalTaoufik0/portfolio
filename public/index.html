@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="shortcut icon" href="./img/image.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -29,10 +31,9 @@
                 <h3>Hi, I'm</h3>
                 <h1>BILAL</h1>
             </div>
-            <img id="accueil-img" src="./img/image.png" alt="">
-            <img id="icon-scroll" src="./img/icon-scroll.png" alt="">
+            <img id="accueil-img" src="./img/image.png" alt="Bilal Image">
+            <img id="icon-scroll" src="./img/icon-scroll.png" alt="Icon Scroll">
         </section>
-        
 
         <section id="cv">
             <h1>PROFIL</h1>
@@ -45,7 +46,7 @@
                 <p>From : <span>France</span></p>
             </div>
             <div class="skills">
-                <h2>Skills :</h2>
+                <h2>Compétences :</h2>
                 <div class="skill">
                     <span>HTML/CSS</span>
                     <div class="skill-bar">
@@ -71,92 +72,89 @@
                     </div>
                 </div>
                 <div class="skill">
-                    <span>3D Modelling</span>
+                    <span>Modelisation 3D</span>
                     <div class="skill-bar">
                         <div class="skill-level" style="width: 10%;"></div>
                     </div>
                 </div>
             </div>
             <div class="download-cv">
-                <a href="./externe/cv.pdf" download>Télécharger mon CV</a>
-                <img src="./img/icon-download.png" alt="">
+                <a href="./externe/cv.pdf" download>Download CV
+                    <img src="./img/icon-download.png" alt="Download Icon">
+                </a>
             </div>
         </section>
 
         <section id="projets">
             <h1>PORTFOLIO</h1>
             <div class="projects-container">
-                <div class="project1">
+                <div class="project">
                     <i>2024</i>
                     <h2>UVITEC</h2>
-                    <h3>Professional Project</h3>
-                    <img src="./img/logo-uvitec.png" alt="Projet 1">
-                    <p>3D visualization + Animation</p>
-                    <button class="view-button" data-project="Projet 1">VIEW</button>
+                    <h3>Projet Professionnel</h3>
+                    <img src="./img/logo-uvitec.png" alt="Projet UVITEC">
+                    <p>Visualisation 3D + Animation</p>
+                    <button class="view-button" data-project="Projet 1">VOIR</button>
                 </div>
-                <div class="project2">
+                <div class="project">
                     <i>2024</i>
                     <h2>VILBER</h2>
-                    <h3>Professional Project</h3>
-                    <img src="./img/logo-vilber.png" alt="Projet 2">
-                    <p>3D visualization + Animation</p>
-                    <button class="view-button" data-project="Projet 2">VIEW</button>
+                    <h3>Projet Professionnel</h3>
+                    <img src="./img/logo-vilber.png" alt="Projet VILBER">
+                    <p>Visualisation 3D + Animation</p>
+                    <button class="view-button" data-project="Projet 2">VOIR</button>
                 </div>
-                <div class="project3">
+                <div class="project">
                     <i>2024</i>
-                    <h2>CRYPTO-SHILD</h2>
-                    <h3>School Project Collab</h3>
-                    <img src="./img/icon-logiciel.png" alt="Projet 3">
-                    <p>File encryption/decryption software</p>
-                    <button class="download-button" data-project="Projet 3">DOWNLOAD</button>
+                    <h2>CRYPTO-SHIELD</h2>
+                    <h3>Projet Scolaire Collaboratif</h3>
+                    <img src="./img/icon-logiciel.png" alt="Projet CRYPTO-SHIELD">
+                    <p>Logiciel de chiffrement/déchiffrement de fichiers</p>
+                    <button class="download-button" data-project="Projet 3">TÉLÉCHARGER</button>
                 </div>
             </div>
         </section>
-    
+
         <section id="contact">
             <h1>CONTACT</h1>
             <form id="contact-form">
                 <label for="name">Nom:</label>
                 <input type="text" id="name" name="name" required>
-                
+
                 <label for="email">E-mail:</label>
                 <input type="email" id="email" name="email" required>
-                
+
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required="" style="width: 918px; height: 379px;"></textarea>
-                
-                <button type="submit">SUBMIT</button>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">ENVOYER</button>
             </form>
-                
+
             <div class="social-buttons">
                 <a href="https://www.linkedin.com/in/bilal-taoufik-642597275/" class="social-button" target="_blank" title="LinkedIn">
                     <img src="./img/icon-linkedin.png" alt="LinkedIn">
-                    <span class="tooltip">LinkedIn</span>
                 </a>
                 <a href="https://github.com/bilalTaoufik0" class="social-button" target="_blank" title="GitHub">
                     <img src="./img/github-icon-2.png" alt="GitHub">
-                    <span class="tooltip">GitHub</span>
                 </a>
                 <a href="mailto:bll.taoufik@gmail.com" class="social-button" title="Mail">
                     <img src="./img/icon-mail.png" alt="Mail">
-                    <span class="tooltip">Mail</span>
                 </a>
             </div>
-            
 
             <footer>
-                <p>© Bilal TAOUFIK | <a href="">Legal Notice</a> | <a href="">Privacy Policy</a></p>
+                <p>© Bilal TAOUFIK | <a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a></p>
             </footer>
         </section>
     </div>
-    
+
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
         emailjs.init("KSloQ27lejVrtcrQF");
 
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
-            
+
             emailjs.sendForm('service_32dvr9u', 'template_oxt08wt', this)
                 .then(function(response) {
                     alert('Message envoyé avec succès!');
@@ -168,4 +166,5 @@
     </script>
     <script src="bundle.js"></script>
 </body>
+
 </html>

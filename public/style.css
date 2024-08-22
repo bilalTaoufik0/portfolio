@@ -12,15 +12,14 @@ html, body {
     height: 100%;
     overflow: hidden; 
     font-family: 'Montserrat', sans-serif;
+    background-color: #424242;
 }
 
 
 h2 {
     padding: 10%;
 }
-h3 {
-    padding: 10% 0px;
-}
+
 
 
 /* Conteneur principal */
@@ -82,11 +81,16 @@ header {
     transition: left 0.3s ease;
     overflow-y: auto;
     z-index: 1100;
+    
+    display: flex;
+    justify-content: center; /* Centrage horizontal des éléments enfants */
+    align-items: center;     /* Centrage vertical des éléments enfants */
 }
 
 .menu ul {
     list-style: none;
-    padding: 20px;
+    padding: 0;
+    gap: 100px;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -123,7 +127,8 @@ section {
 
 
 #accueil {
-    background: linear-gradient(to top, #333 60%, #4e4e4e);
+    /* background: linear-gradient(to top, #333 60%, #4e4e4e); */
+    background-image: url(./img/fond.png);
     color: #ffd27e;
     display: flex;
     justify-content: center;
@@ -136,21 +141,21 @@ section {
 
 .text-container {
     position: absolute;
-    top: 35%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 #accueil h1 {
-    font-size: 60px;
-    letter-spacing: 8px;
-    color: #ffd27e;
+    font-size: 100px;
+    letter-spacing: 20px;
+    color: white;
 }
 
 #accueil h3 {
-    font-size: 20px;
-    letter-spacing: 4px;
-    color: #ffd9a8;
+    font-size: 30px;
+    letter-spacing: 8px;
+    color: #ffd46f94;
 }
 
 #accueil-img {
@@ -194,6 +199,7 @@ section {
 
 .profile-header {
     margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .profile-header img {
@@ -272,7 +278,7 @@ section {
 
 /* Section Projets */
 #projets {
-    background: #333;
+    background-image: url(./img/fond2.png);
     color: #ffd27e;
     padding: 40px 20px;
     width: 100%;

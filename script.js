@@ -23,10 +23,10 @@ function viewProject(projectName) {
     let url = '';
     switch(projectName) {
         case 'Projet 1':
-            url = 'https://example.com/project1';
+            url = 'https://www.uvitec.co.uk/alliance-iris/3d-product-tour/';
             break;
         case 'Projet 2':
-            url = 'https://www.vilber.com/test-bilal-insertion3d-fullscreen/';
+            url = 'https://www.vilber.com/vilber/fusion-absolute-3d-demo/';
             break;
         default:
             console.error('Unknown project:', projectName);

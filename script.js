@@ -60,3 +60,10 @@ document.querySelectorAll('.download-button').forEach(button => {
         downloadProject(button.getAttribute('data-project'));
     });
 });
+
+document.querySelector('.profile-header img').addEventListener('click', function() {
+    this.classList.add('rotate-horizontal');
+    setTimeout(() => {
+        this.classList.remove('rotate-horizontal');
+    }, 1000);
+});

@@ -145,21 +145,21 @@ section {
 
 .text-container {
     position: absolute;
-    top: 30%;
-    left: 50%;
+    top: 50%;
+    left: 75%;
     transform: translate(-50%, -50%);
     z-index: 2;
 }
 
 #accueil h1 {
-    font-size: 100px;
-    letter-spacing: 20px;
+    font-size: 10vw;
+    letter-spacing: 1vw;
     color: white;
 }
 
 #accueil h3 {
-    font-size: 30px;
-    letter-spacing: 8px;
+    font-size: 5vw;
+    letter-spacing: 1vw;
     color: #ffd46f94;
 }
 

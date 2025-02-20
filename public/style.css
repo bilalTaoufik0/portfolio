@@ -15,7 +15,6 @@ html, body {
     background-color: #4e4e4e;
 }
 
-
 h2 {
     padding: 10%;
 }
@@ -23,8 +22,6 @@ h2 {
 h1 {
     display: flex;
 }
-
-
 
 /* Conteneur principal */
 .container {
@@ -38,10 +35,6 @@ h1 {
 .container::-webkit-scrollbar {
     display: none;
 }
-
-
-
-
 
 /* En-tête */
 header {
@@ -85,7 +78,7 @@ header {
     transition: left 0.3s ease;
     overflow-y: auto;
     z-index: 1100;
-    
+
     display: flex;
     justify-content: center; /* Centrage horizontal des éléments enfants */
     align-items: center;     /* Centrage vertical des éléments enfants */
@@ -117,21 +110,13 @@ header {
     color: #ffd9a8;
 }
 
-
-
-
-
 /* Sections */
 section {
     padding: 20px;
     margin-top: 100px;
 }
 
-
-
-
 #accueil {
-    /* background: linear-gradient(to top, #333 60%, #4e4e4e); */
     background-image: url(./img/fond.png);
     color: #ffd27e;
     display: flex;
@@ -176,7 +161,6 @@ section {
     height: 100%;
 }
 
-
 .viewer-container-2 {
     width: 100%;
     height: 107vh;
@@ -186,7 +170,6 @@ section {
     position: absolute;
     background: linear-gradient(15deg, #e62b4700 calc(35% - 0.5px), #f7f7f700 calc(35% + 0.5px));
 }
-
 
 #icon-scroll {
     position: absolute;
@@ -203,10 +186,6 @@ section {
         transform: translateY(-10px);
     }
 }
-
-
-
-
 
 /* Section CV */
 #cv {
@@ -258,33 +237,56 @@ section {
     font-weight: bold;
 }
 
-.skills {
+.skills-and-tools {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
     margin-bottom: 40px;
+    width: 100%;
+    max-width: 1200px;
 }
 
-.skills h2 {
+.skills, .tools {
+    width: 48%;
+}
+
+.skills h2, .tools h2 {
     font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.tool-category {
     margin-bottom: 20px;
 }
 
-.skill {
-    margin-bottom: 15px;
+.tool-category h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
-.skill-bar {
+.skill, .tool {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.skill-bar, .tool-bar {
     background: #666;
     border-radius: 10px;
     overflow: hidden;
     height: 20px;
-    width: 300px;
-    margin: 10px auto;
+    width: 100%;
+    margin-top: 5px;
 }
 
-.skill-level {
+.skill-level, .tool-level {
     background: #ffd27e;
     height: 100%;
     border-radius: 10px 0 0 10px;
 }
+
+
 
 .download-cv a {
     background: #ffd27e;
@@ -305,12 +307,6 @@ section {
     vertical-align: middle;
     width: 20px;
 }
-
-
-
-
-
-
 
 /* Section Projets */
 #projets {
@@ -345,6 +341,7 @@ section {
     height: auto;
     object-fit: cover;
 }
+
 .project p {
     padding: 10%;
 }
@@ -355,6 +352,24 @@ section {
 
 .project:hover {
     transform: scale(1.05);
+}
+
+.project.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    position: relative;
+}
+
+.project.disabled .unavailable {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffd27e;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
 .view-button, .download-button {
@@ -371,13 +386,6 @@ section {
 .view-button:hover, .download-button:hover {
     background: #ffd9a8;
 }
-
-
-
-
-
-
-
 
 /* Section Contact */
 #contact {

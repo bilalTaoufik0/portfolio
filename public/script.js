@@ -26,7 +26,7 @@ function viewProject(projectName) {
             url = 'https://www.uvitec.co.uk/alliance-iris/3d-product-tour/';
             break;
         case 'Projet 2':
-            url = 'https://www.vilber.com/vilber/fusion-absolute-3d-demo/';
+            url = '';
             break;
         default:
             console.error('Unknown project:', projectName);

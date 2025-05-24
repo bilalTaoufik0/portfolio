@@ -14,7 +14,21 @@ html, body {
     overflow: hidden;
     font-family: 'Montserrat', sans-serif;
     background-color: #4e4e4e;
+    cursor: none;
 }
+
+.custom-cursor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ffa500;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    mix-blend-mode: difference;
+}
+
 
 h2 {
     padding: 10%;
@@ -45,6 +59,28 @@ header {
     z-index: 1100;
 }
 
+
+.music-toggle {
+    background: #4e4e4e;
+    border: none;
+    border-radius: 5px;
+    font-size: 30px;
+    color: #ffd27e;
+    color: #ffa500; /* Couleur orange pour l'icône */
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 29px;
+    right: 100px;
+    z-index: 1200;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.music-toggle:hover {
+    background: #ffd9a871;
+}
+
+
 .menu-container {
     position: relative;
 }
@@ -67,6 +103,9 @@ header {
 .menu-toggle:hover {
     background: #ffd9a871;
 }
+
+
+
 
 .menu {
     position: fixed;

@@ -23,10 +23,10 @@ function viewProject(projectName) {
     let url = '';
     switch(projectName) {
         case 'Projet 1':
-            url = 'https://www.uvitec.co.uk/alliance-iris/3d-product-tour/';
+            url = 'https://projet-airlockunlock.netlify.app/';
             break;
         case 'Projet 2':
-            url = '';
+            url = 'https://www.uvitec.co.uk/alliance-iris/3d-product-tour/';
             break;
         default:
             console.error('Unknown project:', projectName);

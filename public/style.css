@@ -15,6 +15,7 @@ html, body {
     font-family: 'Montserrat', sans-serif;
     background-color: #4e4e4e;
     cursor: none;
+    
 }
 
 .custom-cursor {
@@ -153,7 +154,7 @@ header {
 /* Sections */
 section {
     padding: 20px;
-    margin-top: 100px;
+    margin-top: 0px;
 }
 
 #accueil {

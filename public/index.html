@@ -1,299 +1,237 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PORTFOLIO - BILAL TAOUFIK</title>
+    <link rel="shortcut icon" href="./img/logo-test.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./style.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Bilal Taoufik | Développeur Web et 3D</title>
-    <link rel="shortcut icon" href="./img/image.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-</head>
 
-<body>
-    <div class="container">
-        <header>
-            <div class="menu-container">
-                <button id="menu-toggle" class="menu-toggle">☰</button>
-                <audio id="click-sound" src="externe/swip.mp3"></audio>
-                <nav id="menu" class="menu">
-                    <ul>
-                        <li><a href="#accueil">Home</a></li>
-                        <li><a href="#cv">CV</a></li>
-                        <li><a href="#projets">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-
-        <audio id="background-music" loop>
-            <source src="externe/audio.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-
-        <section class="section" id="accueil">
-            <div class="text-container">
-                <h3>Apprenti Web Developper </h3>
-                <h1>BILAL</h1>
-            </div>
-            <div class="viewer-container-2">
-                <model-viewer class="model-viewer-2"
-                  src="./externe/ROTATE.glb"
-                  alt="Fusion Absolute"
-                  disable-zoom
-                  camera-orbit="25deg 90deg"
-                  id="shadow-intensity-demo"
-                  shadow-auto-update="0.5"
-                  shadow-intensity="3"
-                  shadow-softness="1"
-                  tone-mapping="neutral"
-                  ar ar-modes="webxr scene-viewer quick-look"
-                  fullscreen-button
-                  interaction-prompt="none"
-                ></model-viewer>
-              </div>
-
-            <img id="accueil-img" src="" alt="">
-            <img id="icon-scroll" src="./img/icon-scroll.png" alt="Icon Scroll">
-        </section>
-
-        <section class="section" id="cv">
-            <h1>PROFILE</h1>
-            <div class="profile-header">
-                <img src="./img/image2.png" alt="Profile Picture">
-            </div>
-            <div class="profile-info">
-                <p>Name : <span>Bilal</span></p>
-                <p>Age : <span>20</span></p>
-                <p>From : <span>France</span></p>
-            </div>
-            <div class="skills-and-tools">
-                <div class="skills">
-                    <h2>Programming Languages :</h2>
-                    <div class="skill">
-                        <span>HTML/CSS</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 90%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>JavaScript</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 80%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>C++</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 50%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Python</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 50%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>PHP</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 50%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Java</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 50%;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tools">
-                    <h2>Tools :</h2>
-                    <div class="tool-category">
-                        <h3>Web Development</h3>
-                        <div class="tool">
-                            <span>Github</span>
-                            <div class="tool-bar">
-                                <div class="tool-level" style="width: 90%;"></div>
-                            </div>
-                        </div>
-                        <div class="tool">
-                            <span>Figma</span>
-                            <div class="tool-bar">
-                                <div class="tool-level" style="width: 70%;"></div>
-                            </div>
-                        </div>
-                        <div class="tool">
-                            <span>Docker</span>
-                            <div class="tool-bar">
-                                <div class="tool-level" style="width: 60%;"></div>
-                            </div>
-                        </div>
-                        <div class="tool">
-                            <span>MySQL</span>
-                            <div class="tool-bar">
-                                <div class="tool-level" style="width: 60%;"></div>
-                            </div>
-                        </div>
-                        <div class="tool">
-                            <span>WordPress</span>
-                            <div class="tool-bar">
-                                <div class="tool-level" style="width: 75%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tool">
-                        <span>Android Studio</span>
-                        <div class="tool-bar">
-                            <div class="tool-level" style="width: 80%;"></div>
-                        </div>
-                    </div>
-                    <div class="tool">
-                        <span>Arduino</span>
-                        <div class="tool-bar">
-                            <div class="tool-level" style="width: 50%;"></div>
-                        </div>
-                    </div>
-                    <div class="tool">
-                        <span>Monia</span>
-                        <div class="tool-bar">
-                            <div class="tool-level" style="width: 30%;"></div>
-                        </div>
-                    </div>
-                    <div class="tool-category">
-                        <h3>Networking / Cybersecurity</h3>
-                        <div class="tool">
-                            <span>VMware (KALI - DEBIAN)</span>
-                            <div class="tool-bar">
-                                <div class="tool-level" style="width: 70%;"></div>
-                            </div>
-                        </div>
-                        <div class="tool">
-                            <span>Cisco Packet Tracer</span>
-                            <div class="tool-bar">
-                                <div class="tool-level" style="width: 20%;"></div>
-                            </div>
-                        </div>
-                        <div class="tool">
-                            <span>Wireshark</span>
-                            <div class="tool-bar">
-                                <div class="tool-level" style="width: 20%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tool-category">
-                        <h3>3D</h3>
-                        <div class="tool">
-                            <span>Blender</span>
-                            <div class="tool-bar">
-                                <div class="tool-level" style="width: 40%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="download-cv">
-                <a href="./externe/CV - BILAL TAOUFIK.pdf" download>Download CV
-                    <img src="./img/icon-download.png" alt="Download Icon">
-                </a>
-            </div>
-        </section>
-        
-        
-
-        <section class="section" id="projets">
-            <h1>PORTFOLIO</h1>
-            <div class="projects-container">
-                <div class="project">
-                    <i>2025</i>
-                    <h2>AirlockUnluck</h2>
-                    <h3>Collaborative School Project</h3>
-                    <img src="./img/logo-airlocunluck.png" alt="Nouveau Projet">
-                    <p>Web site + App Mobile</p>
-                    <button class="view-button" data-project="Projet 1">VIEW</button>
-                    <!-- <span class="unavailable">COMING SOON</span> -->
-                </div>
-                <div class="project">
-                    <i>2024</i>
-                    <h2>UVITEC</h2>
-                    <h3>Professional Project</h3>
-                    <img src="./img/logo-uvitec.png" alt="Projet UVITEC">
-                    <p>3D visualization + Animation</p>
-                    <button class="view-button" data-project="Projet 2">VIEW</button>
-                </div>
-                <div class="project disabled">
-                    <i>2024</i>
-                    <h2>VILBER</h2>
-                    <h3>Professional Project</h3>
-                    <img src="./img/logo-vilber.png" alt="Projet VILBER">
-                    <p>3D visualization + Animation</p>
-                    <span class="unavailable">UNAVAILABLE</span>
-                </div>
-                <div class="project">
-                    <i>2024</i>
-                    <h2>CRYPTO-SHIELD</h2>
-                    <h3>Collaborative School Project</h3>
-                    <img src="./img/icon-logiciel.png" alt="Projet CRYPTO-SHIELD">
-                    <p>File encryption/decryption software</p>
-                    <button class="download-button" data-project="Projet 3">DOWNLOAD</button>
-                </div>
-            </div>
-        </section>
-        
-
-        <section class="section" id="contact">
-            <h1>CONTACT ME</h1>
-            <form id="contact-form">
-                <label for="name">Name :</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">E-mail :</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message :</label>
-                <textarea id="message" name="message" rows="10" required></textarea>
-
-                <button type="submit">SUBMIT</button>
-            </form>
-
-            <div class="social-buttons">
-                <a href="https://www.linkedin.com/in/bilal-t-642597275/" class="social-button" target="_blank" title="LinkedIn">
-                    <img src="./img/icon-linkedin.png" alt="LinkedIn">
-                </a>
-                <a href="https://github.com/bilalTaoufik0" class="social-button" target="_blank" title="GitHub">
-                    <img src="./img/github-icon-2.png" alt="GitHub">
-                </a>
-                <a href="mailto:bll.taoufik@gmail.com" class="social-button" title="Mail">
-                    <img src="./img/icon-mail.png" alt="Mail">
-                </a>
-            </div>
-
-            <footer>
-                <p>© Bilal TAOUFIK | <a href="#">Terms of use</a> | <a href="#">Privacy Policy</a></p>
-            </footer>
-        </section>
-    </div>
-
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="module" src="https://unpkg.com/@google/model-viewer@3.0.1/dist/model-viewer.min.js"></script>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        emailjs.init("KSloQ27lejVrtcrQF");
-
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            emailjs.sendForm('service_32dvr9u', 'template_oxt08wt', this)
-                .then(function(response) {
-                    alert('Message envoyé avec succès!');
-                }, function(error) {
-                    alert('Erreur lors de l\'envoi du message');
-                    console.error('Erreur:', error);
-                });
-        });
+      tailwind.config = {
+        theme: {
+          extend: {
+            transitionProperty: {
+              height: 'height',
+            }
+          }
+        }
+      }
     </script>
 
-    <script src="script.js"></script>
-</body>
+    <!-- Model Viewer -->
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
 
+    
+
+  </head>
+
+  <body class="relative h-screen w-screen bg-black text-white font-sans overflow-hidden select-none">
+    <div id="particles-js" class="absolute inset-0 z-10"></div>
+
+
+    <!-- Fond 3D -->
+    <model-viewer
+      src="./externe/ROTATE.glb"
+      auto-rotate
+      camera-controls
+      disable-zoom
+      interaction-prompt="none"
+      style="background-color: #ff9839;"
+    ></model-viewer>
+    <div class="overlay"></div>
+
+    <!-- Sections -->
+    <main id="main-content" class="h-full w-full flex items-center justify-center px-6 transition-all duration-500">
+      
+      <!-- ACCUEIL -->
+      <section id="accueil" class="section-content relative overflow-hidden h-full w-full flex items-center justify-center">
+        <div id="accueil-container" class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-10 justify-center">
+          
+          <!-- Image -->
+          <div id="image-wrapper" class="flex justify-center items-center transition-all duration-[2000ms] ease-in-out">
+            <img
+              src="./img/logoV2.JPG"
+              alt="Portrait"
+              id="accueil-image"
+              class="transition-all duration-[2000ms] ease-in-out"
+            />
+          </div>
+
+          <!-- Texte -->
+          <div id="accueil-text" class="flex flex-col space-y-2 opacity-0 transition-opacity duration-700">
+            <h1 class="text-5xl font-bold text-orange-500">Développeur Web Junior</h1>
+            <p class="text-gray-300">Étudiant à l'ESGI | Alternant chez Bio Imaging</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- INFOS -->
+      <section id="infos" class="section-content hidden">
+        <div class="text-center max-w-2xl">
+          <h2 class="text-3xl font-bold text-orange-500 mb-4">À propos de moi</h2>
+          <p class="text-gray-300">
+            Passionné par les technologies web, j'aime apprendre, expérimenter et construire des solutions utiles.
+            Mon parcours m’a permis d’acquérir des compétences solides en front-end comme en back-end.
+          </p>
+        </div>
+      </section>
+
+      <!-- COMPÉTENCES -->
+      <section id="competences" class="section-content hidden">
+        <div class="text-center max-w-3xl">
+          <h2 class="text-3xl font-bold text-orange-500 mb-4">Compétences</h2>
+          <p class="text-gray-300 mb-4">Voici les technologies que je maîtrise :</p>
+          <ul class="text-gray-200 grid grid-cols-2 md:grid-cols-3 gap-4">
+            <li>HTML / CSS</li>
+            <li>JavaScript / React</li>
+            <li>PHP / Laravel</li>
+            <li>Tailwind CSS</li>
+            <li>MySQL</li>
+            <li>Git / GitHub</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="projets" class="section-content hidden px-6 py-10 w-full">
+        <!-- Titre -->
+        <h2 class="text-4xl font-bold text-orange-300 mb-10 text-left">Projets</h2>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 justify-items-center">
+
+          <!-- Carte Projet -->
+          <div class="relative bg-white/20 backdrop-blur-lg rounded-xl p-6 shadow-lg w-full max-w-xs min-h-[450px] flex flex-col items-center text-center group transition">
+            <button onclick="toggleTech(this)" class="absolute top-3 right-3 bg-gray-700 hover:bg-gray-600 text-white px-2 py-1 rounded-full text-xs z-10">
+              i
+            </button>
+            <p class="text-sm text-gray-400 mb-2">2025</p>
+            <h3 class="text-xl font-semibold text-orange-400 mb-2">AirlockUnlock</h3>
+            <img src="./img/logo-airlocunluck.png" alt="Logo Airlock" class="w-35 h-35 object-contain mb-4" />
+            <p class="text-gray-300 text-sm mb-6">
+              Projet de fin d'études : application de gestion de serrures connectées.
+            </p>
+            <a href="https://projet-airlockunlock.netlify.app/" target="_blank"
+              class="bg-orange-400 hover:bg-orange-500 text-white text-sm px-4 py-2 rounded-full transition">
+              View
+            </a>
+            <div class="hidden mt-4 text-sm text-gray-400 tech-details">
+              <p><strong>Languages :</strong> Java, XML, HTML/CSS, JS, PHP</p>
+              <p><strong>Outils :</strong> Docker, Android Studio, WireShark, MySQL</p>
+            </div>
+          </div>
+
+          <!-- Répète pour les autres cartes en remplaçant le contenu -->
+          <!-- UVITEC -->
+          <div class="relative bg-white/20 backdrop-blur-lg rounded-xl p-6 shadow-lg w-full max-w-xs min-h-[450px] flex flex-col items-center text-center group transition">
+            <button onclick="toggleTech(this)" class="absolute top-3 right-3 bg-gray-700 hover:bg-gray-600 text-white px-2 py-1 rounded-full text-xs z-10">i</button>
+            <p class="text-sm text-gray-400 mb-2">2024</p>
+            <img src="./img/logo-uvitec.png" alt="Logo Uvitec" class="w-16 h-16 object-contain mb-4" />
+            <h3 class="text-xl font-semibold text-orange-400 mb-2">Projet Professionnel</h3>
+            <p class="text-gray-300 text-sm mb-6">
+              Page web produit avec interaction et animation 3D.
+            </p>
+            <a href="https://www.uvitec.co.uk/alliance-iris/3d-product-tour/" target="_blank"
+              class="bg-orange-400 hover:bg-orange-500 text-white text-sm px-4 py-2 rounded-full transition">
+              View
+            </a>
+            <div class="hidden mt-4 text-sm text-gray-400 tech-details">
+              <p><strong>Technologies :</strong> JS, Tailwind, ModelViewer</p>
+            </div>
+          </div>
+
+          <!-- VILBER -->
+          <div class="relative bg-white/20 backdrop-blur-lg rounded-xl p-6 shadow-lg w-full max-w-xs min-h-[450px] flex flex-col items-center text-center group transition">
+            <button onclick="toggleTech(this)" class="absolute top-3 right-3 bg-gray-700 hover:bg-gray-600 text-white px-2 py-1 rounded-full text-xs z-10">i</button>
+            <p class="text-sm text-gray-400 mb-2">2024</p>
+            <img src="./img/logo-vilber.png" alt="Logo Vilber" class="w-16 h-16 object-contain mb-4" />
+            <h3 class="text-xl font-semibold text-orange-400 mb-2">Projet Professionnel</h3>
+            <p class="text-gray-300 text-sm mb-6">
+              Site immersif en WebGL & Tailwind.
+            </p>
+            <a href="#" target="_blank"
+              class="bg-orange-400 hover:bg-orange-500 text-white text-sm px-4 py-2 rounded-full transition">
+              View
+            </a>
+            <div class="hidden mt-4 text-sm text-gray-400 tech-details">
+              <p><strong>Technologies :</strong> JS, Tailwind, Three.js</p>
+            </div>
+          </div>
+
+          <!-- CRYPTO -->
+          <div class="relative bg-white/20 backdrop-blur-lg rounded-xl p-6 shadow-lg w-full max-w-xs min-h-[450px] flex flex-col items-center text-center group transition">
+            <button onclick="toggleTech(this)" class="absolute top-3 right-3 bg-gray-700 hover:bg-gray-600 text-white px-2 py-1 rounded-full text-xs z-10">i</button>
+            <p class="text-sm text-gray-400 mb-2">2024</p>
+            <img src="./img/icon-logiciel.png" alt="Crypto Shield" class="w-16 h-16 object-contain mb-4" />
+            <h3 class="text-xl font-semibold text-orange-400 mb-2">Projet Scolaire</h3>
+            <p class="text-gray-300 text-sm mb-6">
+              Logiciel de cryptage/décryptage de fichiers.
+            </p>
+            <a href="#" target="_blank"
+              class="bg-orange-400 hover:bg-orange-500 text-white text-sm px-4 py-2 rounded-full transition">
+              View
+            </a>
+            <div class="hidden mt-4 text-sm text-gray-400 tech-details">
+              <p><strong>Technologies :</strong> JS, Electron, Node.js</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- CONTACT -->
+      <section id="contact" class="section-content hidden">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold text-orange-500 mb-4">Contact</h2>
+          <p class="text-gray-300 mb-2">Email : <a href="mailto:bilal@example.com" class="text-orange-400 underline">bilal@example.com</a></p>
+          <p class="text-gray-300">LinkedIn : <a href="#" class="text-orange-400 underline">linkedin.com/in/bilaltaoufik</a></p>
+        </div>
+      </section>
+    </main>
+
+    <!-- NAVIGATION -->
+    <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-neutral-900/90 px-6 py-3 rounded-full flex space-x-6 shadow-lg backdrop-blur z-10">
+      <!-- Boutons -->
+      <button onclick="changeSection('accueil')" class="text-orange-400 hover:text-white group relative">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9.75L12 4l9 5.75M4.5 10.5v8.25a.75.75 0 00.75.75H9V15h6v4.5h3.75a.75.75 0 00.75-.75V10.5" />
+        </svg>
+        <span class="absolute bottom-10 text-xs text-white bg-black px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">Accueil</span>
+      </button>
+      <button onclick="changeSection('infos')" class="text-orange-400 hover:text-white group relative">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z" />
+        </svg>
+        <span class="absolute bottom-10 text-xs text-white bg-black px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">Infos</span>
+      </button>
+      <button onclick="changeSection('competences')" class="text-orange-400 hover:text-white group relative">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+        </svg>
+        <span class="absolute bottom-10 text-xs text-white bg-black px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">Compétences</span>
+      </button>
+      <button onclick="changeSection('projets')" class="text-orange-400 hover:text-white group relative">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" />
+        </svg>
+        <span class="absolute bottom-10 text-xs text-white bg-black px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">Projets</span>
+      </button>
+      <button onclick="changeSection('contact')" class="text-orange-400 hover:text-white group relative">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m0 0l4-4m0 8l-4-4m13 4v1a2 2 0 01-2 2H5a2 2 0 01-2-2v-1a10 10 0 0120 0z" />
+        </svg>
+        <span class="absolute bottom-10 text-xs text-white bg-black px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">Contact</span>
+      </button>
+    </nav>
+
+    <script src="./script.js"></script>
+  </body>
 </html>

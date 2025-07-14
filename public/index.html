@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PORTFOLIO - BILAL TAOUFIK</title>
+    <title>PORTFOLIO | BILAL TAOUFIK</title>
     <link rel="shortcut icon" href="./img/logo-test.png" type="image/x-icon" />
-    <link rel="stylesheet" href="./style.css" />
 
 
     <!-- Tailwind CSS CDN -->
@@ -30,11 +29,11 @@
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
 
     
-
+    <link rel="stylesheet" href="./style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   </head>
 
   <body class="relative h-screen w-screen bg-black text-white font-sans overflow-hidden select-none">
-    <div id="particles-js" class="absolute inset-0 z-10"></div>
 
 
     <!-- Fond 3D -->
@@ -44,12 +43,13 @@
       camera-controls
       disable-zoom
       interaction-prompt="none"
-      style="background-color: #ff9839;"
+      style="background-color: #5a595700;"
     ></model-viewer>
     <div class="overlay"></div>
 
     <!-- Sections -->
-    <main id="main-content" class="h-full w-full flex items-center justify-center px-6 transition-all duration-500">
+    <main id="main-content" class="h-screen w-full flex flex-col overflow-y-scroll scroll-snap-type-y-mandatory">
+
       
       <!-- ACCUEIL -->
       <section id="accueil" class="section-content relative overflow-hidden h-full w-full flex items-center justify-center">
@@ -73,36 +73,61 @@
         </div>
       </section>
 
+      
+
       <!-- INFOS -->
       <section id="infos" class="section-content hidden">
-        <div class="text-center max-w-2xl">
-          <h2 class="text-3xl font-bold text-orange-500 mb-4">À propos de moi</h2>
+        <div class="text-center-infos max-w-2xl">
+          <h2 class="text-3xl font-bold text-orange-500 mb-4">INFOS</h2>
           <p class="text-gray-300">
             Passionné par les technologies web, j'aime apprendre, expérimenter et construire des solutions utiles.
-            Mon parcours m’a permis d’acquérir des compétences solides en front-end comme en back-end.
+            Mon parcours m'a permis d'acquérir des compétences solides en front-end comme en back-end.
           </p>
         </div>
       </section>
 
+
+
       <!-- COMPÉTENCES -->
       <section id="competences" class="section-content hidden">
-        <div class="text-center max-w-3xl">
-          <h2 class="text-3xl font-bold text-orange-500 mb-4">Compétences</h2>
-          <p class="text-gray-300 mb-4">Voici les technologies que je maîtrise :</p>
-          <ul class="text-gray-200 grid grid-cols-2 md:grid-cols-3 gap-4">
-            <li>HTML / CSS</li>
-            <li>JavaScript / React</li>
-            <li>PHP / Laravel</li>
-            <li>Tailwind CSS</li>
-            <li>MySQL</li>
-            <li>Git / GitHub</li>
-          </ul>
+        <div class="text-center-cpts max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-orange-500 mb-6">COMPETENCES</h2>
+
+            <div class="flex flex-col items-start space-y-16 mt-20 ml-20">
+            <!-- CYBERSÉCURITÉ -->
+            <div class="relative group flex flex-col items-start space-y-4 cursor-pointer text-5xl font-extrabold text-orange-500">
+              <span>C</span>
+              <span class="absolute left-24 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 text-3xl whitespace-nowrap">
+                ybersécurité
+              </span>
+            </div>
+
+            <!-- RÉSEAU -->
+            <div class="relative group flex flex-col items-start space-y-4 cursor-pointer text-5xl font-extrabold text-orange-500">
+              <span>R</span>
+              <span class="absolute left-24 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 text-3xl whitespace-nowrap">
+                éseau
+              </span>
+            </div>
+
+            <!-- DÉVELOPPEMENT WEB -->
+            <div class="relative group flex flex-col items-start space-y-4 cursor-pointer text-5xl font-extrabold text-orange-500">
+              <span>D</span>
+              <span class="absolute left-24 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 text-3xl whitespace-nowrap">
+                éveloppement Web
+              </span>
+            </div>
+          </div>
+          
         </div>
       </section>
 
+
+      
+      <!-- PROJETS -->
       <section id="projets" class="section-content hidden px-6 py-10 w-full">
         <!-- Titre -->
-        <h2 class="text-4xl font-bold text-orange-300 mb-10 text-left">Projets</h2>
+        <h2 class="text-4xl font-bold text-orange-300 mb-10 text-left">PROJETS</h2>
 
         <!-- Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 justify-items-center">
@@ -113,37 +138,37 @@
               i
             </button>
             <p class="text-sm text-gray-400 mb-2">2025</p>
-            <h3 class="text-xl font-semibold text-orange-400 mb-2">AirlockUnlock</h3>
+            <h3 class="text-xl font-semibold text-orange-400 mb-2">AIRLOCKUNLOCK</h3>
             <img src="./img/logo-airlocunluck.png" alt="Logo Airlock" class="w-35 h-35 object-contain mb-4" />
             <p class="text-gray-300 text-sm mb-6">
-              Projet de fin d'études : application de gestion de serrures connectées.
+              Projet de fin d'études : Site web | Application Android | Back End | IoT.
             </p>
             <a href="https://projet-airlockunlock.netlify.app/" target="_blank"
               class="bg-orange-400 hover:bg-orange-500 text-white text-sm px-4 py-2 rounded-full transition">
-              View
+              Ouvrir
             </a>
             <div class="hidden mt-4 text-sm text-gray-400 tech-details">
               <p><strong>Languages :</strong> Java, XML, HTML/CSS, JS, PHP</p>
-              <p><strong>Outils :</strong> Docker, Android Studio, WireShark, MySQL</p>
+              <p><strong>Outils :</strong> Docker, Android Studio, WireShark, MySQL, Github, Trello, Figma</p>
             </div>
           </div>
 
-          <!-- Répète pour les autres cartes en remplaçant le contenu -->
           <!-- UVITEC -->
           <div class="relative bg-white/20 backdrop-blur-lg rounded-xl p-6 shadow-lg w-full max-w-xs min-h-[450px] flex flex-col items-center text-center group transition">
             <button onclick="toggleTech(this)" class="absolute top-3 right-3 bg-gray-700 hover:bg-gray-600 text-white px-2 py-1 rounded-full text-xs z-10">i</button>
             <p class="text-sm text-gray-400 mb-2">2024</p>
+            <h3 class="text-xl font-semibold text-orange-400 mb-2">UVITEC</h3>
             <img src="./img/logo-uvitec.png" alt="Logo Uvitec" class="w-16 h-16 object-contain mb-4" />
-            <h3 class="text-xl font-semibold text-orange-400 mb-2">Projet Professionnel</h3>
             <p class="text-gray-300 text-sm mb-6">
-              Page web produit avec interaction et animation 3D.
+              Page web interactif avec animation 3D pour un produit.
             </p>
             <a href="https://www.uvitec.co.uk/alliance-iris/3d-product-tour/" target="_blank"
               class="bg-orange-400 hover:bg-orange-500 text-white text-sm px-4 py-2 rounded-full transition">
-              View
+              Ouvrir
             </a>
             <div class="hidden mt-4 text-sm text-gray-400 tech-details">
-              <p><strong>Technologies :</strong> JS, Tailwind, ModelViewer</p>
+              <p><strong>Languages :</strong> HTML/CSS, JS (three.js)</p>
+              <p><strong>Outils :</strong> VS Code, Github, WordPress</p>
             </div>
           </div>
 
@@ -151,17 +176,19 @@
           <div class="relative bg-white/20 backdrop-blur-lg rounded-xl p-6 shadow-lg w-full max-w-xs min-h-[450px] flex flex-col items-center text-center group transition">
             <button onclick="toggleTech(this)" class="absolute top-3 right-3 bg-gray-700 hover:bg-gray-600 text-white px-2 py-1 rounded-full text-xs z-10">i</button>
             <p class="text-sm text-gray-400 mb-2">2024</p>
+            <h3 class="text-xl font-semibold text-orange-400 mb-2">VILBER</h3>
             <img src="./img/logo-vilber.png" alt="Logo Vilber" class="w-16 h-16 object-contain mb-4" />
-            <h3 class="text-xl font-semibold text-orange-400 mb-2">Projet Professionnel</h3>
             <p class="text-gray-300 text-sm mb-6">
-              Site immersif en WebGL & Tailwind.
+              Page web interactif avec animation 3D pour un produit.
             </p>
-            <a href="#" target="_blank"
-              class="bg-orange-400 hover:bg-orange-500 text-white text-sm px-4 py-2 rounded-full transition">
-              View
+            <a target="_blank"
+              class="bg-orange-400 text-white text-sm px-4 py-2 rounded-full transition cursor-not-allowed opacity-50"
+              aria-disabled="true" tabindex="-1" disabled>
+              Ouvrir
             </a>
             <div class="hidden mt-4 text-sm text-gray-400 tech-details">
-              <p><strong>Technologies :</strong> JS, Tailwind, Three.js</p>
+              <p><strong>Languages :</strong> HTML/CSS, JS (three.js)</p>
+              <p><strong>Outils :</strong> VS Code, Github, WordPress</p>
             </div>
           </div>
 
@@ -169,17 +196,18 @@
           <div class="relative bg-white/20 backdrop-blur-lg rounded-xl p-6 shadow-lg w-full max-w-xs min-h-[450px] flex flex-col items-center text-center group transition">
             <button onclick="toggleTech(this)" class="absolute top-3 right-3 bg-gray-700 hover:bg-gray-600 text-white px-2 py-1 rounded-full text-xs z-10">i</button>
             <p class="text-sm text-gray-400 mb-2">2024</p>
+            <h3 class="text-xl font-semibold text-orange-400 mb-2">CRYPTO-SHILD</h3>
             <img src="./img/icon-logiciel.png" alt="Crypto Shield" class="w-16 h-16 object-contain mb-4" />
-            <h3 class="text-xl font-semibold text-orange-400 mb-2">Projet Scolaire</h3>
             <p class="text-gray-300 text-sm mb-6">
               Logiciel de cryptage/décryptage de fichiers.
             </p>
-            <a href="#" target="_blank"
+            <a href="./externe/Crypto-Shild.exe" target="_blank"
               class="bg-orange-400 hover:bg-orange-500 text-white text-sm px-4 py-2 rounded-full transition">
-              View
+              Télécharger
             </a>
             <div class="hidden mt-4 text-sm text-gray-400 tech-details">
-              <p><strong>Technologies :</strong> JS, Electron, Node.js</p>
+              <p><strong>Languages :</strong> Python (Tkinter)</p>
+              <p><strong>Outils :</strong> VS Code, Github, Figma</p>
             </div>
           </div>
 
@@ -188,11 +216,32 @@
 
 
       <!-- CONTACT -->
-      <section id="contact" class="section-content hidden">
-        <div class="text-center">
-          <h2 class="text-3xl font-bold text-orange-500 mb-4">Contact</h2>
-          <p class="text-gray-300 mb-2">Email : <a href="mailto:bilal@example.com" class="text-orange-400 underline">bilal@example.com</a></p>
-          <p class="text-gray-300">LinkedIn : <a href="#" class="text-orange-400 underline">linkedin.com/in/bilaltaoufik</a></p>
+      <section id="contact" class="section-content contact-section">
+        <h2>CONTACT</h2>
+
+        <form id="contact-form">
+          <label for="name" class="label">Nom :</label>
+          <input type="text" id="name" name="name" required class="input">
+
+          <label for="email" class="label">E-mail :</label>
+          <input type="email" id="email" name="email" required class="input">
+
+          <label for="message" class="label">Message :</label>
+          <textarea id="message" name="message" rows="10" required class="textarea"></textarea>
+
+          <button type="submit" class="btn">Envoyer</button>
+        </form>
+
+        <div class="social-buttons flex justify-center space-x-6 mt-8">
+          <a href="https://www.linkedin.com/in/bilal-t-642597275/" target="_blank" title="LinkedIn" class="hover:opacity-80">
+            <img src="./img/icon-linkedin.png" alt="LinkedIn" class="w-8 h-8" />
+          </a>
+          <a href="https://github.com/bilalTaoufik0" target="_blank" title="GitHub" class="hover:opacity-80">
+            <img src="./img/github-icon-2.png" alt="GitHub" class="w-8 h-8" />
+          </a>
+          <a href="mailto:bll.taoufik@gmail.com" title="Mail" class="hover:opacity-80">
+            <img src="./img/icon-mail.png" alt="Mail" class="w-8 h-8" />
+          </a>
         </div>
       </section>
     </main>
@@ -233,5 +282,22 @@
     </nav>
 
     <script src="./script.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      emailjs.init("KSloQ27lejVrtcrQF");
+
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        emailjs.sendForm('service_32dvr9u', 'template_oxt08wt', this)
+          .then(function(response) {
+            alert('Message envoyé avec succès!');
+            document.getElementById('contact-form').reset();
+          }, function(error) {
+            alert("Erreur lors de l'envoi du message");
+            console.error('Erreur:', error);
+          });
+      });
+    </script>
   </body>
 </html>

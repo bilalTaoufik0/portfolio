@@ -1,3 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap');
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+main#main-content {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  display: flex;
+  flex-direction: column;
+  scroll-padding-top: 0;
+}
+
 model-viewer {
   position: fixed;
   top: 0;
@@ -19,16 +39,336 @@ model-viewer {
   display: none;
 }
 
+
+
+
+
+
+/* ACCUEIL */
+
 #accueil-image.fullscreen-start {
-  width: 100%;
-  height: 100%;
+  width: 100%;         
+  height: 100%;          
+  max-height: 100vh;     
   border-radius: 9999px;
   object-fit: cover;
+  transition: width 2.5s ease, height 2.5s ease; 
 }
 
 #accueil-image.final {
-  width: 24rem; /* w-96 */
+  width: 24rem;           
   height: 24rem;
   border-radius: 9999px;
   object-fit: cover;
+  transition: width 2.5s ease, height 2.5s ease;
 }
+
+/* Media queries pour rendre responsive la taille finale */
+
+@media (max-width: 768px) {
+  #accueil-image.final {
+    width: 18rem;
+    height: 18rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #accueil-image.final {
+    width: 14rem;
+    height: 14rem;
+  }
+}
+
+
+#accueil-text h1 {
+  font-size: 3rem; /* taille par défaut (taille moyenne) */
+}
+
+#accueil-text p {
+  font-size: 1.25rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #accueil-text h1 {
+    font-size: 2.5rem;
+  }
+  #accueil-text p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #accueil-text h1 {
+    font-size: 2rem;
+  }
+  #accueil-text p {
+    font-size: 0.875rem;
+  }
+}
+
+
+
+
+/* COMPETENCES */
+
+.text-center-cpts h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  margin-top: 2.5rem;
+  margin-left: -55%;
+  text-align: left;
+  color: #f97316;
+}
+
+
+
+
+/* INFOS */
+
+.text-center-infos h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  margin-top: 2.5rem;
+  margin-left: 3%;
+  text-align: left;
+  color: #f97316;
+}
+
+
+
+
+/* PROJETS */
+
+#projets {
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  color: #f97316; /* orange plus doux */
+}
+
+/* Titre */
+#projets > h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  text-align: left;
+  color: #f97316; /* orange doux clair */
+}
+
+/* Grid container - display flex responsive */
+#projets .grid {
+  display: flex;
+  flex-wrap: wrap; /* permet le retour à la ligne sur petits écrans */
+  gap: 1.5rem;
+  padding-left: 3%;
+  padding-right: 5%;
+  justify-content: center; /* centre les cartes horizontalement */
+}
+
+/* Chaque carte */
+#projets .grid > div {
+  max-width: 320px;
+  width: 100%;
+  background: rgba(255 255 255 / 0.2);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+  flex-grow: 1;
+  flex-basis: 300px; /* largeur minimale pour la carte */
+}
+
+#projets .grid > div:hover {
+  transform: translateY(-5px);
+}
+
+/* Bouton info "i" */
+#projets .grid > div button {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background-color: #374151;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.2s ease;
+}
+
+#projets .grid > div button:hover {
+  background-color: #4B5563;
+}
+
+/* Date */
+#projets .grid > div p.text-sm:first-of-type {
+  color: #9CA3AF;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* Titre projet */
+#projets .grid > div h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #f97316;
+}
+
+/* Image */
+#projets .grid > div img {
+  width: auto;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: -4rem;
+  margin-top: 4rem;
+}
+
+/* Description */
+#projets .grid > div p.text-gray-300 {
+  color: #D1D5DB;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  margin-top: 50%;
+  flex-grow: 1;
+}
+
+/* Bouton View */
+#projets .grid > div a {
+  background-color: #f97316;
+  color: white;
+  font-size: 0.875rem;
+  padding: 0.5rem 6rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  align-self: center;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+#projets .grid > div a:hover {
+  background-color: #fcd34d1e;
+}
+
+/* Détails technologies */
+#projets .grid > div .tech-details {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #9CA3AF;
+}
+
+/* Responsive image height */
+@media (min-width: 1024px) {
+  #projets .grid > div img {
+    height: 160px;
+  }
+}
+
+
+
+
+
+/* CONTACT */
+
+.contact-section {
+  width: 35%;
+  margin: 0 auto;
+  padding: 2rem 2rem 3rem;
+  border-radius: 8px;
+  color: white;
+}
+
+.contact-section h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-left: -105%;
+  margin-bottom: 2rem;
+  text-align: left;
+  color: #f97316;
+}
+
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.label {
+  color: #d1d5db;
+  font-weight: 600;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #4b5563;
+  background-color: #374151;
+  color: white;
+  font-size: 1rem;
+  resize: none;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #f97316;
+  box-shadow: 0 0 0 2px #f97316;
+}
+
+.btn {
+  background-color: #f97316;
+  color: white;
+  padding: 0.75rem 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ea580c;
+}
+
+@media (max-width: 1024px) {
+  .contact-section {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    width: 90%;
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .contact-section h2 {
+    margin-left: 0; /* Pour éviter les débordements sur mobile */
+    text-align: center;
+  }
+}
+

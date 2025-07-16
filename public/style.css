@@ -45,8 +45,6 @@ h1 {
     overflow-y: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
 }
 
 .container::-webkit-scrollbar {

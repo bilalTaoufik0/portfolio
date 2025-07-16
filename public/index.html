@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PORTFOLIO | BILAL TAOUFIK</title>
+    <title>PORTFOLIO - BILAL TAOUFIK</title>
     <link rel="shortcut icon" href="./img/logo-test.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 
 
     <!-- Tailwind CSS CDN -->
@@ -26,7 +28,6 @@
       type="module"
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
 
     
     <link rel="stylesheet" href="./style.css" />
@@ -67,30 +68,80 @@
 
           <!-- Texte -->
           <div id="accueil-text" class="flex flex-col space-y-2 opacity-0 transition-opacity duration-700">
-            <h1 class="text-5xl font-bold text-orange-500">Développeur Web Junior</h1>
+            <h1 class="text-5xl font-bold text-orange-500">DEVELOPPEUR WEB JUNIOR</h1>
             <p class="text-gray-300">Étudiant à l'ESGI | Alternant chez Bio Imaging</p>
           </div>
         </div>
       </section>
 
-      
+
+
 
       <!-- INFOS -->
       <section id="infos" class="section-content hidden">
-        <div class="text-center-infos max-w-2xl">
-          <h2 class="text-3xl font-bold text-orange-500 mb-4">INFOS</h2>
-          <p class="text-gray-300">
-            Passionné par les technologies web, j'aime apprendre, expérimenter et construire des solutions utiles.
-            Mon parcours m'a permis d'acquérir des compétences solides en front-end comme en back-end.
-          </p>
+        <div class="container">
+            <h2 class="title">INFOS</h2>
+            <p class="description">
+                Mon parcours m'a permis de passer d'un Bac orienté commerce à des compétences techniques en informatique. Aujourd'hui, je poursuis mes études et mes projets personnels afin de continuer à me perfectionner.
+            </p>
+
+            <div class="timeline">
+                <div class="line"></div>
+
+                <div class="step">
+                    <div class="dot"></div>
+                    <p class="date">2022</p>
+                    <p class="step-title">Bac Pro Commerce</p>
+                    <p class="step-info">Admis Mention Bien</p>
+                </div>
+
+                <div class="step">
+                    <div class="dot"></div>
+                    <p class="date">2022 - 2023</p>
+                    <p class="step-title">BTS MCO</p>
+                    <p class="step-info">.</p>
+                </div>
+
+                <div class="step">
+                    <div class="dot"></div>
+                    <p class="date">2023 - 2025</p>
+                    <p class="step-title">BTS CIEL</p>
+                    <p class="step-info">Admis a 16</p>
+                </div>
+
+                <div class="step">
+                    <div class="dot"></div>
+                    <p class="date">2025 - 2026</p>
+                    <p class="step-title">Bachelor Ingénierie Web</p>
+                    <p class="step-info">Alternant chez Bio Imaging</p>
+                </div>
+            </div>
+            <div class="cv-button">
+                <a href="./externe/CV - BILAL TAOUFIK.pdf" download>
+                    <i class="fa-solid fa-download" style="margin-right: 8px;"></i> CV
+                </a>
+            </div>
+            <div class="social-buttons">
+                <a href="https://www.linkedin.com/in/bilal-t-642597275/" class="social-button" target="_blank" title="LinkedIn">
+                    <img src="./img/icon-linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/bilalTaoufik0" class="social-button" target="_blank" title="GitHub">
+                    <img src="./img/github-icon-2.png" alt="GitHub">
+                </a>
+                <a href="mailto:bll.taoufik@gmail.com" class="social-button" title="Mail">
+                    <img src="./img/icon-mail.png" alt="Mail">
+                </a>
+            </div>
         </div>
       </section>
+
+
 
 
       <!-- COMPÉTENCES -->
       <section id="competences" class="section-content hidden">
         <div class="container">
-          <h2>COMPÉTENCES</h2>
+          <h2 class="titre-competences">COMPÉTENCES</h2>
 
           <div class="tabs">
             <button class="tab-btn active" data-tab="dev">DEVELOPPEMENT WEB</button>
@@ -103,14 +154,14 @@
               <h3>LANGUAGES - OUTILS - FRAMEWORKS</h3>
               <div class="carousel-vertical-horizontal">
                 <!-- Colonne 1 -->
-                <div class="carousel-column" data-delay="0">
+                <div class="carousel-column" data-delay="3000">
                   <img src="./img/html5.png" alt="HTML" class="active">
                   <img src="./img/css.png" alt="CSS">
                   <img src="./img/cplusplus.png" alt="Cplusplus">
                   <img src="./img/javascript.png" alt="JavaScript">
                 </div>
                 <!-- Colonne 2 -->
-                <div class="carousel-column" data-delay="1000">
+                <div class="carousel-column" data-delay="3000">
                   <img src="./img/phpmyadmin.png" alt="phpmyadmin" class="active">
                   <img src="./img/php.png" alt="PHP">
                   <img src="./img/mysql.png" alt="MySQL">
@@ -118,7 +169,7 @@
                   <img src="./img/java.png" alt="Java">
                 </div>
                 <!-- Colonne 3 -->
-                <div class="carousel-column" data-delay="2000">
+                <div class="carousel-column" data-delay="3000">
                   <img src="./img/vscode.png" alt="Vscode" class="active">
                   <img src="./img/figma.png" alt="Figma">
                   <img src="./img/github.png" alt="GitHub">
@@ -134,15 +185,50 @@
                 </div>
               </div>
             </div>
-
             <div class="tab-panel" id="reseau">
-              <h3>RESEAU</h3>
-              <p>Outils : Cisco, TCP/IP, VPN, Firewall, etc.</p>
+                <h3>RÉSEAU</h3>
+                <p>
+                  <strong>Compétences : </strong>Conception et administration d'infrastructures réseaux (LAN, WAN, DMZ), configuration des équipements (Cisco, VLAN, routage, pare-feu), supervision et sécurisation des architectures via les protocoles standards (TCP/IP, VPN). 
+                </p>
+                <div class="carousel-vertical-horizontal">
+                <!-- Colonne 1 -->
+                <div class="carousel-column" data-delay="3000">
+                  <img src="./img/cisco-packet-tracer.png" alt="cisco-packet-tracer" class="active">
+                </div>
+                <!-- Colonne 2 -->
+                <div class="carousel-column" data-delay="3000">
+                  <img src="./img/vmware.png" alt="vmware" class="active">
+                </div>
+                <!-- Colonne 3 -->
+                <div class="carousel-column" data-delay="3000">
+                  <img src="./img/Putty.png" alt="Putty" class="active">
+                </div>
+                <!-- Colonne 4 -->
+                <div class="carousel-column" data-delay="3000">
+                  <img src="./img/Debian_logo.png" alt="Debian" class="active">
+                </div>
+              </div>
             </div>
 
             <div class="tab-panel" id="cyber">
-              <h3>CYBER SECURITE</h3>
-              <p>Outils : Wireshark, Metasploit, Burp Suite, etc.</p>
+                <h3>CYBER SECURITE</h3>
+                <p>
+                    <strong>Compétences : </strong>Analyse de vulnérabilités, sécurisation des systèmes, gestion des incidents, tests d'intrusion (réseaux, web).
+                </p>
+                <div class="carousel-vertical-horizontal">
+                <!-- Colonne 1 -->
+                <div class="carousel-column" data-delay="3000">
+                  <img src="./img/wireshark.png" alt="wireshark" class="active">
+                </div>
+                <!-- Colonne 2 -->
+                <div class="carousel-column" data-delay="3000">
+                  <img src="./img/burpsuite.png" alt="burpsuite" class="active">
+                </div>
+                <!-- Colonne 3 -->
+                <div class="carousel-column" data-delay="3000">
+                  <img src="./img/kalilinux.png" alt="kalilinux" class="active">
+                </div>
+
             </div>
           </div>
         </div>
@@ -175,8 +261,8 @@
               Ouvrir
             </a>
             <div class="hidden mt-4 text-sm text-gray-400 tech-details">
-              <p><strong>Languages :</strong> Java, XML, HTML/CSS, JS, PHP</p>
-              <p><strong>Outils :</strong> Docker, Android Studio, WireShark, MySQL, Github, Trello, Figma</p>
+              <p><strong>Languages :</strong> Java, XML, HTML/CSS, JS, PHP, C++</p>
+              <p><strong>Outils :</strong> Docker, Android Studio, WireShark, MySQL, Github, Trello, Figma, Arduino</p>
             </div>
           </div>
 
@@ -258,55 +344,43 @@
 
           <button type="submit" class="btn">Envoyer</button>
         </form>
-
-        <div class="social-buttons flex justify-center space-x-6 mt-8">
-          <a href="https://www.linkedin.com/in/bilal-t-642597275/" target="_blank" title="LinkedIn" class="hover:opacity-80">
-            <img src="./img/icon-linkedin.png" alt="LinkedIn" class="w-8 h-8" />
-          </a>
-          <a href="https://github.com/bilalTaoufik0" target="_blank" title="GitHub" class="hover:opacity-80">
-            <img src="./img/github-icon-2.png" alt="GitHub" class="w-8 h-8" />
-          </a>
-          <a href="mailto:bll.taoufik@gmail.com" title="Mail" class="hover:opacity-80">
-            <img src="./img/icon-mail.png" alt="Mail" class="w-8 h-8" />
-          </a>
-        </div>
       </section>
     </main>
 
     <!-- NAVIGATION -->
-    <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-neutral-900/90 px-6 py-3 rounded-full flex space-x-6 shadow-lg backdrop-blur z-10">
-      <!-- Boutons -->
-      <button onclick="changeSection('accueil')" class="text-orange-400 hover:text-white group relative">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9.75L12 4l9 5.75M4.5 10.5v8.25a.75.75 0 00.75.75H9V15h6v4.5h3.75a.75.75 0 00.75-.75V10.5" />
+    <nav class="nav-bar">
+      <button data-section="accueil" class="nav-btn active" title="Accueil">
+        <span class="bubble"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M3 9.75L12 4l9 5.75M4.5 10.5v8.25a.75.75 0 00.75.75H9V15h6v4.5h3.75a.75.75 0 00.75-.75V10.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span class="absolute bottom-10 text-xs text-white bg-black px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">Accueil</span>
       </button>
-      <button onclick="changeSection('infos')" class="text-orange-400 hover:text-white group relative">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z" />
+      <button data-section="infos" class="nav-btn" title="Infos">
+        <span class="bubble"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span class="absolute bottom-10 text-xs text-white bg-black px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">Infos</span>
       </button>
-      <button onclick="changeSection('competences')" class="text-orange-400 hover:text-white group relative">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+      <button data-section="competences" class="nav-btn" title="Compétences">
+        <span class="bubble"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span class="absolute bottom-10 text-xs text-white bg-black px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">Compétences</span>
       </button>
-      <button onclick="changeSection('projets')" class="text-orange-400 hover:text-white group relative">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" />
+      <button data-section="projets" class="nav-btn" title="Projets">
+        <span class="bubble"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span class="absolute bottom-10 text-xs text-white bg-black px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">Projets</span>
       </button>
-      <button onclick="changeSection('contact')" class="text-orange-400 hover:text-white group relative">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m0 0l4-4m0 8l-4-4m13 4v1a2 2 0 01-2 2H5a2 2 0 01-2-2v-1a10 10 0 0120 0z" />
+      <button data-section="contact" class="nav-btn" title="Contact">
+        <span class="bubble"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M16 12H8m0 0l4-4m0 8l-4-4m13 4v1a2 2 0 01-2 2H5a2 2 0 01-2-2v-1a10 10 0 0120 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span class="absolute bottom-10 text-xs text-white bg-black px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">Contact</span>
       </button>
     </nav>
+
 
     <script src="./script.js"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>

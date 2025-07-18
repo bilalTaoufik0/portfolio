@@ -26,29 +26,31 @@ function showAccueilDirect() {
 }
 
 // -----------------------------
-// Fonction pour afficher une section avec animation de vague
+// Fonction pour afficher une section avec animation d'écran + slide-up
 // -----------------------------
 function showSectionWithTransition(id) {
   const wave = document.getElementById('transition-wave');
+  const screen = document.getElementById('transition-screen');
 
-  // Affiche et fait monter la vague
-  wave.classList.remove('wave-hide');
-  wave.classList.remove('hidden');
-  wave.classList.add('wave-show');
+  // Monte l'écran
+  screen.classList.remove('hide');
+  screen.classList.add('show');
 
   setTimeout(() => {
     // Cache toutes les sections
     document.querySelectorAll('.section-content').forEach(section => {
       section.classList.add('hidden');
-      section.classList.remove('fade-in');
+      section.classList.remove('fade-in', 'slide-up', 'show');
     });
 
-    // Affiche la nouvelle section
+    // Affiche la nouvelle section avec animation
     const target = document.getElementById(id);
     if (target) {
       target.classList.remove('hidden');
+      target.classList.add('slide-up'); // position initiale
+
       setTimeout(() => {
-        target.classList.add('fade-in');
+        target.classList.add('show'); // déclenche l'animation
       }, 50);
     }
 
@@ -68,15 +70,17 @@ function showSectionWithTransition(id) {
       }, 3000);
     }
 
-    // Fait redescendre la vague
-    wave.classList.remove('wave-show');
-    wave.classList.add('wave-hide');
+    // Redescend l’écran
+    screen.classList.remove('show');
+    screen.classList.add('hide');
 
-    // Cache la vague après l’animation
-    setTimeout(() => {
-      wave.classList.add('hidden');
-    }, 600);
-  }, 600);
+    // Vague optionnelle
+    if (wave) {
+      wave.classList.remove('wave-show');
+      wave.classList.add('wave-hide');
+      setTimeout(() => wave.classList.add('hidden'), 600);
+    }
+  }, 600); // Attente que l'écran soit monté
 }
 
 // -----------------------------

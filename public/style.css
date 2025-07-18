@@ -40,49 +40,39 @@ model-viewer {
 }
 
 
-/* Animation montée et descente de la vague */
-#wave-path {
-  transition: d 0.6s ease-in-out;
+#transition-screen {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f97316 0%, #000000 100%);
+  z-index: 9999;
+  transform: translateY(100%);
+  transition: transform 0.6s ease;
 }
 
-/* Conteneur qui monte et descend */
-.wave-show {
-  animation: waveUp 0.6s ease forwards;
-}
-.wave-hide {
-  animation: waveDown 0.6s ease forwards;
-}
-@keyframes waveUp {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
-@keyframes waveDown {
-  0% {
-    transform: translateY(0%);
-  }
-  100% {
-    transform: translateY(100%);
-  }
+#transition-screen.show {
+  transform: translateY(0%);
 }
 
-/* Fade-in section */
-.fade-in {
-  animation: fadeInUp 0.6s ease forwards;
+#transition-screen.hide {
+  transform: translateY(100%);
 }
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+/* Animation d'apparition vers le haut */
+.slide-up {
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
 }
+
+.slide-up.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
 
 
 .nav-bar {
@@ -630,7 +620,7 @@ model-viewer {
 #projets > h2 {
   font-size: 2.25rem;
   font-weight: 700;
-  margin-bottom: 2.5rem;
+  margin-bottom: 4.5rem;
   text-align: left;
   color: #f97316; /* orange doux clair */
 }

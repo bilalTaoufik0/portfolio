@@ -40,6 +40,49 @@ model-viewer {
 }
 
 
+/* Animation montée et descente de la vague */
+#wave-path {
+  transition: d 0.6s ease-in-out;
+}
+
+/* Conteneur qui monte et descend */
+.wave-show {
+  animation: waveUp 0.6s ease forwards;
+}
+.wave-hide {
+  animation: waveDown 0.6s ease forwards;
+}
+@keyframes waveUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes waveDown {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Fade-in section */
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
 .nav-bar {

@@ -1,116 +1,126 @@
 // -----------------------------
-// Fonction d'affichage initial de la page "accueil" (sans vague)
+// Helper : pause avec Promise pour async/await
 // -----------------------------
-function showAccueilDirect() {
-  const target = document.getElementById('accueil');
-  if (target) {
-    target.classList.remove('hidden');
-    setTimeout(() => {
-      target.classList.add('fade-in');
-    }, 50);
+function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-    // Animation image/texte
-    const image = document.getElementById('accueil-image');
-    const texte = document.getElementById('accueil-text');
-    texte.style.opacity = '0';
-    image.classList.remove('final');
-    image.classList.add('fullscreen-start');
-    setTimeout(() => {
-      image.classList.remove('fullscreen-start');
-      image.classList.add('final');
-    }, 100);
-    setTimeout(() => {
-      texte.style.opacity = '1';
-    }, 3000);
+// -----------------------------
+// Variable pour savoir si l'animation accueil a déjà été jouée
+// -----------------------------
+let accueilAnimated = false;
+
+// -----------------------------
+// Animation accueil (image + texte)
+// -----------------------------
+async function animateAccueil() {
+  const image = document.getElementById('accueil-image');
+  const texte = document.getElementById('accueil-text');
+  if (!image || !texte) return;
+
+  texte.style.opacity = '0';
+  image.classList.remove('final');
+  image.classList.add('fullscreen-start');
+
+  await wait(100);
+
+  image.classList.remove('fullscreen-start');
+  image.classList.add('final');
+
+  await wait(2900);
+
+  texte.style.opacity = '1';
+
+  accueilAnimated = true;  // Animation jouée
+}
+
+// -----------------------------
+// Affichage initial accueil
+// -----------------------------
+async function showAccueilDirect() {
+  const target = document.getElementById('accueil');
+  if (!target) return;
+
+  target.classList.remove('hidden');
+  await wait(50);
+  target.classList.add('fade-in');
+
+  if (!accueilAnimated) {
+    await animateAccueil();
   }
 }
 
 // -----------------------------
-// Fonction pour afficher une section avec animation d'écran + slide-up
+// Affiche une section avec animation écran + slide-up
 // -----------------------------
-function showSectionWithTransition(id) {
-  const wave = document.getElementById('transition-wave');
+async function showSectionWithTransition(id) {
   const screen = document.getElementById('transition-screen');
+  if (!screen) return;
 
-  // Monte l'écran
-  screen.classList.remove('hide');
+  // Reset écran transition (bas + transparent)
+  screen.classList.remove('hide', 'show');
+  screen.style.transform = 'translateY(100%) skewY(5deg)';
+  screen.style.opacity = '0';
+
+  await wait(50);
+
+  // Animation entrée écran (descente)
   screen.classList.add('show');
+  screen.style.transform = '';
+  screen.style.opacity = '';
 
-  setTimeout(() => {
-    // Cache toutes les sections
-    document.querySelectorAll('.section-content').forEach(section => {
-      section.classList.add('hidden');
-      section.classList.remove('fade-in', 'slide-up', 'show');
-    });
+  await wait(600);
 
-    // Affiche la nouvelle section avec animation
-    const target = document.getElementById(id);
-    if (target) {
-      target.classList.remove('hidden');
-      target.classList.add('slide-up'); // position initiale
+  // Cacher toutes sections
+  document.querySelectorAll('.section-content').forEach(section => {
+    section.classList.add('hidden');
+    section.classList.remove('fade-in', 'slide-up', 'show');
+  });
 
-      setTimeout(() => {
-        target.classList.add('show'); // déclenche l'animation
-      }, 50);
-    }
+  // Afficher section ciblée avec slide-up
+  const target = document.getElementById(id);
+  if (target) {
+    target.classList.remove('hidden');
+    target.classList.add('slide-up');
+    await wait(50);
+    target.classList.add('show');
+  }
 
-    // Spécial pour l'accueil
-    if (id === 'accueil') {
-      const image = document.getElementById('accueil-image');
-      const texte = document.getElementById('accueil-text');
-      texte.style.opacity = '0';
-      image.classList.remove('final');
-      image.classList.add('fullscreen-start');
-      setTimeout(() => {
-        image.classList.remove('fullscreen-start');
-        image.classList.add('final');
-      }, 100);
-      setTimeout(() => {
-        texte.style.opacity = '1';
-      }, 3000);
-    }
+  // Animation accueil spécifique, uniquement si jamais jouée
+  if (id === 'accueil' && !accueilAnimated) {
+    await animateAccueil();
+  }
 
-    // Redescend l’écran
-    screen.classList.remove('show');
-    screen.classList.add('hide');
+  // Animation sortie écran (remontée)
+  screen.classList.remove('show');
+  screen.classList.add('hide');
 
-    // Vague optionnelle
-    if (wave) {
-      wave.classList.remove('wave-show');
-      wave.classList.add('wave-hide');
-      setTimeout(() => wave.classList.add('hidden'), 600);
-    }
-  }, 600); // Attente que l'écran soit monté
+  await wait(800);
+
+  // Reset écran transition pour prochaine utilisation
+  screen.classList.remove('hide');
+  screen.style.transform = 'translateY(100%) skewY(5deg)';
+  screen.style.opacity = '0';
 }
 
 // -----------------------------
-// Navigation (boutons en haut)
+// Gestion navigation boutons
 // -----------------------------
 const navButtons = document.querySelectorAll('.nav-btn');
 navButtons.forEach(button => {
-  button.addEventListener('click', () => {
+  button.addEventListener('click', async () => {
     if (button.classList.contains('active')) return;
 
     navButtons.forEach(b => b.classList.remove('active'));
     button.classList.add('active');
 
     const target = button.dataset.section;
-    showSectionWithTransition(target);
+    await showSectionWithTransition(target);
   });
 });
 
 // -----------------------------
-// Toggle des technologies dans les projets
-// -----------------------------
-function toggleTech(button) {
-  const details = button.closest('.group').querySelector('.tech-details');
-  if (details) {
-    details.classList.toggle('hidden');
-  }
-}
-
-// -----------------------------
-// Onglets dans la section compétences
+// Gestion onglets compétences
 // -----------------------------
 const tabButtons = document.querySelectorAll('.tab-btn');
 const tabPanels = document.querySelectorAll('.tab-panel');
@@ -120,32 +130,36 @@ tabButtons.forEach(button => {
     const tab = button.dataset.tab;
     tabButtons.forEach(btn => btn.classList.remove('active'));
     button.classList.add('active');
+
     tabPanels.forEach(panel => {
-      panel.classList.remove('active');
-      if (panel.id === tab) {
-        panel.classList.add('active');
-      }
+      panel.classList.toggle('active', panel.id === tab);
     });
   });
 });
 
 // -----------------------------
-// Carousel vertical (images défilantes dans les compétences)
+// Carousel vertical images compétences (amélioré)
 // -----------------------------
-const columns = document.querySelectorAll('.carousel-column');
-let index = 0;
-setInterval(() => {
-  columns.forEach(column => {
-    const images = column.querySelectorAll('img');
+const carouselColumns = document.querySelectorAll('.carousel-column');
+const carouselIntervals = [];
+
+carouselColumns.forEach((column, colIndex) => {
+  let idx = 0;
+  const images = column.querySelectorAll('img');
+
+  // Lance un interval indépendant pour chaque colonne
+  const intervalId = setInterval(() => {
     images.forEach(img => img.classList.remove('active'));
-    images[index % images.length].classList.add('active');
-  });
-  index++;
-}, 3000);
+    images[idx % images.length].classList.add('active');
+    idx++;
+  }, 3000);
+
+  carouselIntervals.push(intervalId);
+});
 
 // -----------------------------
-// Chargement initial de la page
+// Chargement initial
 // -----------------------------
 window.onload = () => {
-  showAccueilDirect(); // Affiche "accueil" sans transition au premier chargement
+  showAccueilDirect();
 };

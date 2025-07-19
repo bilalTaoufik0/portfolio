@@ -157,6 +157,16 @@ carouselColumns.forEach((column, colIndex) => {
   carouselIntervals.push(intervalId);
 });
 
+
+
+function toggleTech(button) {
+  const card = button.closest('.relative');
+  const techDetails = card.querySelector('.tech-details');
+  if (!techDetails) return;
+
+  techDetails.classList.toggle('hidden');
+}
+
 // -----------------------------
 // Chargement initial
 // -----------------------------

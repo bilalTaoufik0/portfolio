@@ -1,3 +1,68 @@
+// --- Code des particules ---
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+let width, height;
+function resize() {
+  width = window.innerWidth;
+  height = window.innerHeight;
+  canvas.width = width;
+  canvas.height = height;
+}
+window.addEventListener('resize', resize);
+resize();
+
+class Particle {
+  constructor() {
+    this.reset();
+  }
+  reset() {
+    this.x = Math.random() * width;
+    this.y = Math.random() * height;
+    this.size = 1 + Math.random() * 3;
+    this.speedX = (Math.random() - 0.5) * 1.5;
+    this.speedY = (Math.random() - 0.5) * 1.5;
+    const colors = ["#FFA500", "#808080", "#000000"];
+    this.color = colors[Math.floor(Math.random() * colors.length)];
+    this.opacity = 0.6;
+  }
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+
+    if (this.x < 0 || this.x > width) this.speedX *= -1;
+    if (this.y < 0 || this.y > height) this.speedY *= -1;
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.fillStyle = this.color;
+    ctx.globalAlpha = this.opacity;
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.globalAlpha = 1;
+  }
+}
+
+const particles = [];
+const PARTICLE_COUNT = 60;
+for(let i = 0; i < PARTICLE_COUNT; i++) {
+  particles.push(new Particle());
+}
+
+function animate() {
+  ctx.clearRect(0, 0, width, height);
+  for (const p of particles) {
+    p.update();
+    p.draw();
+  }
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+// --- FIN Code particules ---
+
+
 // -----------------------------
 // Helper : pause avec Promise pour async/await
 // -----------------------------
@@ -166,6 +231,13 @@ function toggleTech(button) {
 
   techDetails.classList.toggle('hidden');
 }
+
+
+
+
+
+
+
 
 // -----------------------------
 // Chargement initial

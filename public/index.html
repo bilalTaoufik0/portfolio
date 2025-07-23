@@ -40,6 +40,8 @@
 
   <body class="relative h-screen w-screen bg-black text-white font-sans overflow-hidden select-none">
 
+    <canvas id="canvas"></canvas>
+
 
     <!-- Fond 3D -->
     <model-viewer
@@ -48,7 +50,6 @@
       camera-controls
       disable-zoom
       interaction-prompt="none"
-      style="background-color: #5a595700;"
     ></model-viewer>
     <div class="overlay"></div>
 
@@ -394,22 +395,83 @@
 
 
     <script src="./script.js"></script>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
     <script>
       emailjs.init("KSloQ27lejVrtcrQF");
 
-      document.getElementById('contact-form').addEventListener('submit', function(event) {
+      document.getElementById('contact-form').addEventListener('submit', function (event) {
         event.preventDefault();
 
         emailjs.sendForm('service_32dvr9u', 'template_oxt08wt', this)
-          .then(function(response) {
-            alert('Message envoyé avec succès!');
-            document.getElementById('contact-form').reset();
-          }, function(error) {
-            alert("Erreur lors de l'envoi du message");
-            console.error('Erreur:', error);
+          .then(() => {
+            showNotification("Message envoyé avec succès !");
+            event.target.reset();
+          })
+          .catch(() => {
+            showNotification("Erreur lors de l'envoi du message", true);
           });
       });
+
+      function showNotification(message, isError = false) {
+        const wrapper = document.getElementById('notification');
+        const text = wrapper.querySelector('.notification-text');
+        const circle = wrapper.querySelector('circle');
+        const iconPath = wrapper.querySelector('path');
+        const bar = wrapper.querySelector('.notification-bar');
+
+        text.textContent = message;
+
+        // Couleurs / icônes selon type
+        if (isError) {
+          circle.setAttribute('fill', '#dc3545');
+          iconPath.setAttribute('d', 'M7 7l10 10M17 7l-10 10');
+          bar.style.backgroundColor = '#dc3545';
+        } else {
+          circle.setAttribute('fill', '#28a745');
+          iconPath.setAttribute('d', 'M7 12l3 3 7-7');
+          bar.style.backgroundColor = '#28a745';
+        }
+
+        // Redémarre l'animation de la barre
+        bar.style.animation = 'none';
+        void bar.offsetWidth; // force le reflow
+        bar.style.animation = null;
+
+        // Redémarre l'animation globale
+        wrapper.classList.remove('show');
+        void wrapper.offsetWidth; // force le reflow pour relancer l'animation
+        wrapper.classList.add('show');
+      }
+
     </script>
+
+
+
+
+    <div id="notification" class="notification-wrapper">
+      <div class="notification-box">
+        <div class="notification-header">
+          <div class="notification-content">
+            <div class="notification-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="12" fill="#28a745" />
+                <path d="M7 12l3 3 7-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="notification-text">Message envoyé avec succès !</div>
+          </div>
+          <button class="notification-close" onclick="hideNotification()">×</button>
+        </div>
+        <div class="notification-bar"></div>
+      </div>
+    </div>
+
+
+
+
+
+
+
   </body>
 </html>

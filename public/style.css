@@ -18,20 +18,26 @@ main#main-content {
   scroll-padding-top: 0;
 }
 
+
+canvas#canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: -3; /* encore plus bas que model-viewer */
+  pointer-events: none; /* pour ne pas gêner les interactions */
+}
+
 model-viewer {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
   z-index: -2;
-  object-fit: cover;
 }
 
 .overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
   z-index: -1;
 }
 
@@ -849,3 +855,106 @@ model-viewer {
   }
 }
 
+
+/* NOTIFICATION */
+.notification-wrapper {
+  position: fixed;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 100%) scale(0.95); /* départ en bas hors écran */
+  opacity: 0;
+  transition: none;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.notification-wrapper.show {
+  animation: slideUpFade 4s forwards;
+  pointer-events: auto;
+}
+
+@keyframes slideUpFade {
+  0% {
+    transform: translate(-50%, 100%) scale(0.95);
+    opacity: 0;
+  }
+  10% {
+    transform: translate(-50%, 50%) scale(1);
+    opacity: 1;
+  }
+  80% {
+    transform: translate(-50%, 50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -100%) scale(0.95);
+    opacity: 0;
+  }
+}
+
+.notification-box {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 20px 28px;
+  width: 480px;
+  max-width: 90vw;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+}
+
+/* Ligne principale */
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Contenu : icône + texte */
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Icône verte */
+.notification-icon svg {
+  flex-shrink: 0;
+}
+
+/* Texte */
+.notification-text {
+  flex: 1;
+}
+
+/* Bouton fermer */
+.notification-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s;
+}
+
+.notification-close:hover {
+  color: #333;
+}
+
+/* Barre de chargement */
+.notification-bar {
+  margin-top: 16px;
+  height: 4px;
+  background-color: #28a745;
+  width: 0%;
+  animation: fillBar 4s linear forwards;
+}
+
+/* Animation barre */
+@keyframes fillBar {
+  from { width: 0%; }
+  to   { width: 100%; }
+}

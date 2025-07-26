@@ -18,14 +18,134 @@ main#main-content {
   scroll-padding-top: 0;
 }
 
-
 canvas#canvas {
   position: fixed;
   top: 0; left: 0;
   width: 100vw; height: 100vh;
-  z-index: -3; /* encore plus bas que model-viewer */
-  pointer-events: none; /* pour ne pas gêner les interactions */
+  z-index: -3;
+  pointer-events: none; 
 }
+
+.glow-circles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -3;
+  pointer-events: none;
+}
+
+.glow-circle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: 
+    radial-gradient(circle, rgba(255, 198, 55, 0.4) 0%, 
+    rgba(255, 140, 0, 0.2) 60%, transparent 100%);
+  box-shadow:
+    0 0 80px 40px rgb(255 200 55 / 20%), 
+    0 0 160px 60px rgba(255, 150, 0, 0.2);
+  filter: blur(10px);
+  opacity: 0.8;
+  animation: pulseGlow 10s ease-in-out infinite;
+}
+
+/* Position personnalisée */
+.circle1 {
+  top: 100px;
+  right: 100px;
+  height: 30px;
+  width: 30px;
+}
+
+.circle2 {
+  bottom: 50px;
+  left: 30px;
+  width: 30px;
+  height: 10px;
+}
+
+.circle3 {
+  top: 95%;
+  right: 25%;
+  width: 20px;
+  height: 20px;
+}
+
+.circle4 {
+  top: 33%;
+  left: 35%;
+  width: 20px;
+  height: 20px;
+}
+
+/* Animation de pulsation légère */
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .glow-circle {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .circle1 {
+    top: -80px;
+    right: -60px;
+  }
+
+  .circle2 {
+    bottom: 30px;
+    left: -60px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .circle3 {
+    top: 30%;
+    right: 20%;
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .glow-circle {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .circle1 {
+    top: -85px;
+    right: -40px;
+  }
+
+  .circle2 {
+    bottom: 30px;
+    left: -75px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .circle3 {
+    top: 45%;
+    right: -17%;
+    width: 150px;
+    height: 150px;
+  }
+}
+
 
 model-viewer {
   position: fixed;
@@ -201,6 +321,15 @@ model-viewer {
 
 /* Media queries pour rendre responsive la taille finale */
 
+@media (max-width: 1024px) {
+  #accueil-image.final {
+    width: 20rem;
+    height: 18rem;
+    margin-left: 10%;
+  }
+  
+}
+
 @media (max-width: 768px) {
   #accueil-image.final {
     width: 18rem;
@@ -256,6 +385,16 @@ model-viewer {
   background-color: #111;
   color: #ccc;
   text-align: center;
+}
+
+
+.container h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  text-align: left;
+  color: #f97316;
 }
 
 .container {
@@ -336,6 +475,14 @@ model-viewer {
   color: #777;
 }
 
+
+.footer-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+
 .cv-button a {
   display: inline-block;
   padding: 10px 30px;
@@ -352,12 +499,12 @@ model-viewer {
 }
 
 
-.social-buttons {
+/* .social-buttons {
   margin-top: -46px;
   display: flex;
-  justify-content: end;
-  gap: 9px;
-}
+  justify-content: center;
+  gap: 25px;
+} */
 
 .social-button {
     display: inline-block;
@@ -413,8 +560,7 @@ model-viewer {
     }
 
     .description {
-        font-size: 14px;
-        padding: 0 10px;
+        font-size: 16px;
     }
 
     .title {
@@ -428,9 +574,10 @@ model-viewer {
 
     }
 
-    .social-buttons {
+    .footer-actions {
         gap: 15px;
-        margin-top: -40%;
+        padding-bottom: 120px;
+        align-items: normal;
     }
 
     .social-button img {
@@ -466,7 +613,6 @@ model-viewer {
 @media (max-width: 500px) {
   .container h2 {
     text-align: center;
-    margin-left: 3%;
   }
 }
 
@@ -514,7 +660,8 @@ model-viewer {
 .tab-content p {
   font-size: 1rem;
   color: #d1d5db;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
 .tab-panel {
@@ -614,9 +761,7 @@ model-viewer {
 
 
 
-
-/* PROJETS */
-
+/* === PROJETS === */
 #projets {
   font-family: 'Montserrat', sans-serif;
   width: 100%;
@@ -625,38 +770,58 @@ model-viewer {
   color: #f97316;
 }
 
-/* Titre */
-#projets > h2 {
+#projets h2 {
   font-size: 2.25rem;
   font-weight: 700;
-  margin-bottom: 4.5rem;
-  text-align: left;
-  margin-left: 13%;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  margin-left: 16rem;
   color: #f97316;
 }
 
-@media (max-width: 500px) {
-  #projets > h2 {
-    text-align: left;
+/* Ajustement du titre pour les petits écrans */
+@media (max-width: 1024px) {
+  #projets h2 {
+    margin-left: 8rem;
+  }
+}
+@media (max-width: 768px) {
+  #projets h2 {
+    margin-left: 0;
+    text-align: center;
+    font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+   #projets {
+    padding-bottom: 120px; 
+  }
+
+  #projets h2 {
+    font-size: 1.75rem;
+  }
+}
+@media (max-width: 360px) {
+  #projets h2 {
+    font-size: 1.5rem;
   }
 }
 
-
-/* Grid container - display flex responsive */
+/* Grid container */
 #projets .grid {
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   gap: 1.5rem;
   padding-left: 3%;
-  padding-right: 5%;
+  padding-right: 3%;
   justify-content: center;
 }
 
-/* Chaque carte */
+/* Cartes */
 #projets .grid > div {
   max-width: 320px;
   width: 100%;
-  background: rgba(255 255 255 / 0.2);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(12px);
   border-radius: 1rem;
   padding: 1.5rem;
@@ -670,14 +835,14 @@ model-viewer {
   transition: transform 0.3s ease;
   box-sizing: border-box;
   flex-grow: 1;
-  flex-basis: 300px; /* largeur minimale pour la carte */
+  flex-basis: 300px;
 }
 
 #projets .grid > div:hover {
   transform: translateY(-5px);
 }
 
-/* Bouton info "i" */
+/* Bouton info */
 #projets .grid > div button {
   position: absolute;
   top: 0.75rem;
@@ -704,7 +869,7 @@ model-viewer {
   font-size: 0.875rem;
 }
 
-/* Titre projet */
+/* Titre */
 #projets .grid > div h3 {
   font-size: 1.25rem;
   font-weight: 600;
@@ -730,7 +895,7 @@ model-viewer {
   flex-grow: 1;
 }
 
-/* Bouton View */
+/* Bouton */
 #projets .grid > div a {
   background-color: #f97316;
   color: white;
@@ -749,19 +914,72 @@ model-viewer {
   background-color: #fcd34d1e;
 }
 
-/* Détails technologies */
+/* Technologies */
 #projets .grid > div .tech-details {
   margin-top: 1rem;
   font-size: 0.875rem;
   color: #9CA3AF;
 }
 
-/* Responsive image height */
-@media (min-width: 1024px) {
+/* === MEDIA QUERIES === */
+@media (max-width: 1024px) {
   #projets .grid > div img {
     height: 160px;
   }
 }
+
+@media (max-width: 768px) {
+  #projets .grid > div {
+    min-height: 550px;
+    padding: 1rem;
+  }
+
+  #projets .grid > div img {
+    height: 100px;
+  }
+
+  #projets .grid > div a {
+    padding: 0.5rem 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #projets .grid > div {
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  #projets .grid > div img {
+    margin-top: 2rem;
+    margin-bottom: 0;
+    height: 70px;
+  }
+
+  #projets .grid > div a {
+    padding: 0.5rem 2.5rem;
+    font-size: 0.85rem;
+  }
+
+  #projets .grid > div h3 {
+    font-size: 1.1rem;
+  }
+
+  #projets .grid > div p.text-gray-300 {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  #projets .grid > div a {
+    font-size: 0.8rem;
+    padding: 0.4rem 1.5rem;
+  }
+
+  #projets .grid > div p.text-gray-300 {
+    font-size: 0.8rem;
+  }
+}
+
 
 
 
@@ -770,7 +988,7 @@ model-viewer {
 /* CONTACT */
 
 .contact-section {
-  width: 35%;
+  width: 40%;
   margin: 0 auto;
   padding: 2rem 2rem 3rem;
   border-radius: 8px;
@@ -780,7 +998,7 @@ model-viewer {
 .contact-section h2 {
   font-size: 2.25rem;
   font-weight: 700;
-  margin-left: -65%;
+  margin-top: 2rem;
   margin-bottom: 2rem;
   text-align: left;
   color: #f97316;
@@ -828,9 +1046,10 @@ model-viewer {
 }
 
 .btn:hover {
-  background-color: #fcd34d1e;
+  background-color: #fb923c;
 }
 
+/* === MEDIA QUERIES === */
 @media (max-width: 1024px) {
   .contact-section {
     width: 50%;
@@ -841,19 +1060,50 @@ model-viewer {
   .contact-section {
     width: 70%;
   }
+
+  .contact-section h2 {
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
+
   .contact-section {
     width: 90%;
     padding: 1.5rem 1rem 2rem;
   }
 
+  .contact-section form{
+    padding-bottom : 120px
+  }
+
   .contact-section h2 {
-    margin-left: 0; /* Pour éviter les débordements sur mobile */
+    font-size: 1.75rem;
     text-align: center;
   }
+
+  .input,
+  .textarea {
+    font-size: 0.95rem;
+    padding: 0.65rem 0.9rem;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+    padding: 0.65rem 1rem;
+  }
 }
+
+@media (max-width: 360px) {
+  .contact-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+  }
+}
+
 
 
 /* NOTIFICATION */

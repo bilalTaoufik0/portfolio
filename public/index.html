@@ -42,6 +42,13 @@
 
     <canvas id="canvas"></canvas>
 
+    <div class="glow-circles">
+      <div class="glow-circle circle1"></div>
+      <div class="glow-circle circle2"></div>
+      <div class="glow-circle circle3"></div>
+      <div class="glow-circle circle4"></div>
+    </div>
+
 
     <!-- Fond 3D -->
     <model-viewer
@@ -85,7 +92,7 @@
       <!-- INFOS -->
       <section id="infos" class="section-content hidden">
         <div class="container">
-            <h2 class="title">INFOS</h2>
+            <h2>INFOS</h2>
             <p class="description">
                 "Après un bac dans le commerce, j'ai découvert ma vraie passion : l'informatique. Depuis, je me forme chaque jour, que ce soit à travers mes études ou mes projets personnels. J'aime créer, apprendre, et repousser mes limites."
             </p>
@@ -111,7 +118,7 @@
                     <div class="dot"></div>
                     <p class="date">2023 - 2025</p>
                     <p class="step-title">BTS CIEL</p>
-                    <p class="step-info">Admis a 16</p>
+                    <p class="step-info">Admis a 15.95</p>
                 </div>
 
                 <div class="step">
@@ -121,21 +128,24 @@
                     <p class="step-info">Alternant chez Bio Imaging</p>
                 </div>
             </div>
-            <div class="cv-button">
-                <a href="./externe/CV - BILAL TAOUFIK.pdf" download>
-                    <i class="fa-solid fa-download" style="margin-right: 8px;"></i> CV
-                </a>
-            </div>
-            <div class="social-buttons">
+            <div class="footer-actions">
+              <div class="social-buttons">
                 <a href="https://www.linkedin.com/in/bilal-t-642597275/" class="social-button" target="_blank" title="LinkedIn">
-                    <img src="./img/icon-linkedin.png" alt="LinkedIn">
+                  <img src="./img/icon-linkedin.png" alt="LinkedIn">
                 </a>
                 <a href="https://github.com/bilalTaoufik0" class="social-button" target="_blank" title="GitHub">
-                    <img src="./img/github-icon-2.png" alt="GitHub">
+                  <img src="./img/github-icon-2.png" alt="GitHub">
                 </a>
                 <a href="mailto:bll.taoufik@gmail.com" class="social-button" title="Mail">
-                    <img src="./img/icon-mail.png" alt="Mail">
+                  <img src="./img/icon-mail.png" alt="Mail">
                 </a>
+              </div>
+
+              <div class="cv-button">
+                <a href="./externe/CV - BILAL TAOUFIK.pdf" download>
+                  <i class="fa-solid fa-download" style="margin-right: 8px;"></i> CV
+                </a>
+              </div>
             </div>
         </div>
       </section>
@@ -146,7 +156,7 @@
       <!-- COMPÉTENCES -->
       <section id="competences" class="section-content hidden">
         <div class="container">
-          <h2 class="titre-competences">COMPÉTENCES</h2>
+          <h2>COMPÉTENCES</h2>
 
           <div class="tabs">
             <button class="tab-btn active" data-tab="dev">DEVELOPPEMENT WEB</button>
@@ -245,7 +255,7 @@
       <!-- PROJETS -->
       <section id="projets" class="section-content hidden px-6 py-10 w-full">
         <!-- Titre -->
-        <h2 class="text-4xl font-bold text-orange-300 mb-10 text-left">PROJETS</h2>
+        <h2 class="titlle">PROJETS</h2>
 
         <!-- Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 justify-items-center">
@@ -328,7 +338,6 @@
               <p><strong>Outils :</strong> VS Code, Github, Figma</p>
             </div>
           </div>
-
         </div>
       </section>
 

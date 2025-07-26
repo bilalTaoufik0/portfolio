@@ -19,7 +19,7 @@ class Particle {
   reset() {
     this.x = Math.random() * width;
     this.y = Math.random() * height;
-    this.size = 1 + Math.random() * 3;
+    this.size = 1 + Math.random() * 4;
     this.speedX = (Math.random() - 0.5) * 1.5;
     this.speedY = (Math.random() - 0.5) * 1.5;
     const colors = ["#FFA500", "#808080", "#000000"];
@@ -44,7 +44,7 @@ class Particle {
 }
 
 const particles = [];
-const PARTICLE_COUNT = 60;
+const PARTICLE_COUNT = 150;
 for(let i = 0; i < PARTICLE_COUNT; i++) {
   particles.push(new Particle());
 }
@@ -61,6 +61,8 @@ function animate() {
 animate();
 
 // --- FIN Code particules ---
+
+
 
 
 // -----------------------------

@@ -237,10 +237,6 @@ function toggleTech(button) {
 
 
 
-
-
-
-
 // -----------------------------
 // Chargement initial
 // -----------------------------

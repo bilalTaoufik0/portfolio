@@ -18,6 +18,7 @@ main#main-content {
   scroll-padding-top: 0;
 }
 
+
 canvas#canvas {
   position: fixed;
   top: 0; left: 0;

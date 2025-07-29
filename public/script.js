@@ -117,58 +117,69 @@ async function showAccueilDirect() {
   }
 }
 
+
 // -----------------------------
 // Affiche une section avec animation écran + slide-up
 // -----------------------------
+let isTransitioning = false;
+
 async function showSectionWithTransition(id) {
-  const screen = document.getElementById('transition-screen');
-  if (!screen) return;
+  if (isTransitioning) return;
+  isTransitioning = true;
 
-  // Reset écran transition (bas + transparent)
-  screen.classList.remove('hide', 'show');
-  screen.style.transform = 'translateY(100%) skewY(5deg)';
-  screen.style.opacity = '0';
+  try {
+    const screen = document.getElementById('transition-screen');
+    if (!screen) return;
 
-  await wait(50);
+    // Écran transition : entrée
+    screen.classList.remove('hide', 'show');
+    screen.style.transform = 'translateY(100%) skewY(5deg)';
+    screen.style.opacity = '0';
 
-  // Animation entrée écran (descente)
-  screen.classList.add('show');
-  screen.style.transform = '';
-  screen.style.opacity = '';
+    await wait(20); // ↓ réduit de 50 à 20ms
 
-  await wait(600);
+    screen.classList.add('show');
+    screen.style.transform = '';
+    screen.style.opacity = '';
 
-  // Cacher toutes sections
-  document.querySelectorAll('.section-content').forEach(section => {
-    section.classList.add('hidden');
-    section.classList.remove('fade-in', 'slide-up', 'show');
-  });
+    await wait(600); // ↓ réduit de 600 à 300ms
 
-  // Afficher section ciblée avec slide-up
-  const target = document.getElementById(id);
-  if (target) {
-    target.classList.remove('hidden');
-    target.classList.add('slide-up');
-    await wait(50);
-    target.classList.add('show');
+    // Masquer toutes les sections
+    document.querySelectorAll('.section-content').forEach(section => {
+      section.classList.add('hidden');
+      section.classList.remove('fade-in', 'slide-up', 'show');
+    });
+
+    // Afficher la section cible
+    const target = document.getElementById(id);
+    if (target) {
+      target.classList.remove('hidden');
+      target.classList.add('slide-up');
+      await wait(20); // ↓ réduit
+      target.classList.add('show');
+    }
+
+    // Animation accueil (non modifiée)
+    if (id === 'accueil' && !accueilAnimated) {
+      await animateAccueil();
+    }
+
+    // Écran transition : sortie
+    screen.classList.remove('show');
+    screen.classList.add('hide');
+
+    await wait(300); // ↓ réduit de 800 à 300ms
+
+    // Reset transition
+    screen.classList.remove('hide');
+    screen.style.transform = 'translateY(100%) skewY(5deg)';
+    screen.style.opacity = '0';
+
+  } finally {
+    isTransitioning = false;
   }
-
-  // Animation accueil spécifique, uniquement si jamais jouée
-  if (id === 'accueil' && !accueilAnimated) {
-    await animateAccueil();
-  }
-
-  // Animation sortie écran (remontée)
-  screen.classList.remove('show');
-  screen.classList.add('hide');
-
-  await wait(800);
-
-  // Reset écran transition pour prochaine utilisation
-  screen.classList.remove('hide');
-  screen.style.transform = 'translateY(100%) skewY(5deg)';
-  screen.style.opacity = '0';
 }
+
 
 // -----------------------------
 // Gestion navigation boutons

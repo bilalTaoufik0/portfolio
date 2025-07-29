@@ -97,8 +97,8 @@ canvas#canvas {
 
 @media (max-width: 768px) {
   .glow-circle {
-    width: 200px;
-    height: 200px;
+    width: 20px;
+    height: 20px;
   }
   
   .circle1 {
@@ -109,41 +109,38 @@ canvas#canvas {
   .circle2 {
     bottom: 30px;
     left: -60px;
-    width: 150px;
-    height: 150px;
   }
 
   .circle3 {
     top: 30%;
     right: 20%;
-    width: 180px;
-    height: 180px;
   }
 }
 
 @media (max-width: 480px) {
   .glow-circle {
-    width: 150px;
-    height: 150px;
+    width: 20px;
+    height: 20px;
   }
   
   .circle1 {
-    top: -85px;
-    right: -40px;
+    top: -10px;
+    right: -10px;
   }
 
   .circle2 {
-    bottom: 30px;
-    left: -75px;
-    width: 120px;
-    height: 120px;
+    bottom: 15px;
+    left: 0px;
   }
 
   .circle3 {
+    top: 70%;
+    right: -10%;
+  }
+
+  .circle4 {
     top: 45%;
     right: -17%;
-    width: 150px;
-    height: 150px;
   }
 }
 
@@ -732,7 +729,7 @@ model-viewer {
 }
 
 /* Responsive mobile */
-@media (max-width: 500px) {
+@media (max-width: 480px) {
   .tabs {
     gap: 0.5rem;
   }
@@ -756,6 +753,7 @@ model-viewer {
     width: 70px;
     height: 70px;
   }
+
 }
 
 

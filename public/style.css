@@ -767,6 +767,8 @@ model-viewer {
   padding: 40px 20px;
   box-sizing: border-box;
   color: #f97316;
+  /* Espace sous la section pour éviter que les cartes touchent le bas */
+  margin-bottom: 4rem;
 }
 
 #projets h2 {
@@ -791,9 +793,25 @@ model-viewer {
     font-size: 2rem;
   }
 }
+
+/* Responsive margin adjustments for the projets section */
+@media (max-width: 1024px) {
+  #projets {
+    margin-bottom: 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #projets {
+    margin-bottom: 6rem;
+  }
+}
+
 @media (max-width: 480px) {
    #projets {
-    padding-bottom: 120px; 
+    padding-bottom: 120px;
+    /* larger bottom margin on small screens to avoid overlap with fixed nav */
+    margin-bottom: 8rem;
   }
 
   #projets h2 {

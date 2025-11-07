@@ -38,13 +38,6 @@ Bienvenue sur le repository de mon portfolio ! Ce site web représente mon parco
 ![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white)
 
 
-## 📸 Aperçu
-
-<div align="center">
-  <img src="https://via.placeholder.com/800x400/667eea/ffffff?text=Aperçu+Desktop" alt="Desktop View" width="45%">
-  <img src="https://via.placeholder.com/400x600/764ba2/ffffff?text=Aperçu+Mobile" alt="Mobile View" width="25%">
-</div>
-
 
 ## 📬 Contact
 
